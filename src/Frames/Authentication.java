@@ -46,7 +46,7 @@ public class Authentication extends javax.swing.JFrame {
         clear = new javax.swing.JButton();
         text1 = new javax.swing.JLabel();
         text2 = new javax.swing.JLabel();
-        dob = new com.toedter.calendar.JDateChooser();
+        date = new com.toedter.calendar.JDateChooser();
         jLabel1 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
 
@@ -127,7 +127,7 @@ public class Authentication extends javax.swing.JFrame {
 
         text2.setForeground(new java.awt.Color(255, 0, 0));
         jPanel2.add(text2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 260, 20));
-        jPanel2.add(dob, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 260, 30));
+        jPanel2.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, 260, 30));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, 480, 520));
 
@@ -176,7 +176,7 @@ public class Authentication extends javax.swing.JFrame {
         try
         {
             
-            Date temp = dob.getDate();
+            Date temp = date.getDate();
             System.out.println("Date Format:"+temp);
             if(temp == null)
             {
@@ -213,7 +213,7 @@ public class Authentication extends javax.swing.JFrame {
                   
                     adhar.setText("");
                    
-                    dob.setCalendar(null);                }
+                    date.setCalendar(null);                }
             });
     }//GEN-LAST:event_clearActionPerformed
 
@@ -267,7 +267,7 @@ public class Authentication extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField adhar;
     private javax.swing.JButton clear;
-    private com.toedter.calendar.JDateChooser dob;
+    private com.toedter.calendar.JDateChooser date;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
