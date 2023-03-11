@@ -133,6 +133,11 @@ public class Login extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(255, 165, 0));
         jLabel10.setText("forgot password ?");
         jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel10MouseClicked(evt);
+            }
+        });
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, -1, -1));
 
         jLabel11.setText("Not a member ? Sign up now ");
@@ -227,8 +232,8 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void b2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b2ActionPerformed
-        
-        
+        t1.setText("");
+        t2.setText("");
     }//GEN-LAST:event_b2ActionPerformed
 
     private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
@@ -248,6 +253,12 @@ public class Login extends javax.swing.JFrame {
         this.hide();
         obj.setVisible(true);
     }//GEN-LAST:event_jLabel12MouseClicked
+
+    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+        Authentication obj = new Authentication();
+        this.hide();
+        obj.setVisible(true);
+    }//GEN-LAST:event_jLabel10MouseClicked
 
     /**
      * @param args the command line arguments

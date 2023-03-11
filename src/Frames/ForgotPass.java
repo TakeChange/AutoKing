@@ -209,10 +209,11 @@ public class ForgotPass extends javax.swing.JFrame {
         // TODO add your handling code here:
          String strpattern3="^(?=.*[0-9])"+ "(?=.*[a-z])(?=.*[A-Z])" + "(?=.*[@#$%^&+=])"+ "(?=\\S+$).{8,20}$";
         String upassword = t1.getText();
+        boolean isValid=true;
         if(upassword.equals(""))
         {
             text1.setText("Password do not empty.");
-            //isValid = false;
+            isValid = false;
         }
         else
         if(upassword.matches(strpattern3))
@@ -222,7 +223,7 @@ public class ForgotPass extends javax.swing.JFrame {
         else
         {
             text1.setText("Enter valid password");
-             //isValid = false;
+             isValid = false;
         }
         
         ///This is for confirm password
@@ -230,7 +231,7 @@ public class ForgotPass extends javax.swing.JFrame {
         if(confpassword.equals(""))
         {
            text2.setText(" Enter valid password"); 
-           //isValid = false;
+           isValid = false;
         }
         else
         if(upassword.equals(confpassword))
@@ -240,7 +241,14 @@ public class ForgotPass extends javax.swing.JFrame {
         else
         {
             text2.setText("Password do not Match Enter above Password");
-           // isValid = false;
+            isValid = false;
+        }
+        
+        if(isValid)
+        {
+            Login obj = new Login();
+            this.hide();
+            obj.setVisible(true);
         }
     }//GEN-LAST:event_save1ActionPerformed
 

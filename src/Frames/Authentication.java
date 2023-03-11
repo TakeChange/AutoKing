@@ -196,6 +196,13 @@ public class Authentication extends javax.swing.JFrame {
         {
             System.out.println(e);
         }
+        
+        if(isValid)
+        {
+            ForgotPass obj = new ForgotPass();
+            this.hide();
+            obj.setVisible(true);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed

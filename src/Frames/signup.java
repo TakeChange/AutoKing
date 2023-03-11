@@ -79,28 +79,28 @@ public signup() {
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Bodoni MT", 1, 30)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel3.setText("Registration  Form");
+        jLabel3.setText("Signup  Form");
         jLabel3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 260, 40));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 260, 40));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel4.setText("please fill this form to create an account.");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 230, 30));
+        jLabel4.setText("Please fill this form to create an account.");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 230, 30));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel6.setText("Date Of Birth     :");
+        jLabel6.setText("Date of birth     :");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel7.setText("Adhar No           :");
+        jLabel7.setText("Adhar no.          :");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 150, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel8.setText("Mobile No         :");
+        jLabel8.setText("Mobile no.         :");
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel10.setText("password           :");
+        jLabel10.setText("Password           :");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, -1, -1));
 
         username.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -118,7 +118,7 @@ public signup() {
         jPanel2.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 280, 40));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel11.setText("Confirm Password :");
+        jLabel11.setText("Confirm password :");
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 520, -1, 30));
 
         password.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -172,7 +172,7 @@ public signup() {
         jPanel2.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 630, 120, -1));
 
         jLabel16.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel16.setText("UserName          :");
+        jLabel16.setText("Username          :");
         jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
@@ -181,19 +181,19 @@ public signup() {
 
         jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel18.setText("Login Here");
+        jLabel18.setText("Login here");
         jLabel18.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 700, -1, -1));
 
+        jCheckBox1.setBackground(new java.awt.Color(255, 255, 255));
         jCheckBox1.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        jCheckBox1.setSelected(true);
         jCheckBox1.setText("I accept the terms of use & privacy policy");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 590, 380, -1));
+        jPanel2.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 580, 380, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 0, 0));
@@ -403,8 +403,7 @@ public signup() {
         {
             text4.setText("");
         }
-        
-        
+    
         ///This is for Password Field
         /*
             ^ represents starting character of the string.
@@ -454,8 +453,8 @@ public signup() {
         }
          if(isValid)
         {
-            JOptionPane.showMessageDialog(this,"Login Successfully.");
-            Dashbord obj = new Dashbord();
+            JOptionPane.showMessageDialog(this,"Registration Successfully.");
+            Login obj = new Login();
             this.hide();
             obj.setVisible(true);
             // Database connectivity queries
