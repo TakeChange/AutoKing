@@ -70,14 +70,14 @@ public class Login extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Bodoni MT", 1, 28)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 165, 0));
-        jLabel3.setText("Login ");
+        jLabel3.setText("LOGIN ");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 250, 40));
 
-        jLabel4.setText("Welcome Back, Please login to your account.");
+        jLabel4.setText("Welcome back, Please login to your account.");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setText("UserName :");
+        jLabel5.setText("Username :");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
 
         t1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -105,7 +105,7 @@ public class Login extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(255, 165, 0));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Login");
+        jButton1.setText("LOGIN");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,7 +131,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 165, 0));
-        jLabel10.setText("forgot password ?");
+        jLabel10.setText("Forgot password ?");
         jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -210,6 +210,26 @@ public class Login extends javax.swing.JFrame {
         else
         {
             passError.setText("");
+        }
+        
+        String strpattern3="^(?=.*[0-9])"+ "(?=.*[a-z])(?=.*[A-Z])" + "(?=.*[@#$%^&+=])"+ "(?=\\S+$).{8,20}$";
+        String password = t1.getText();
+        //boolean isValid=true;
+        if(upassword.equals(""))
+        {
+            userError.setText("Password do not empty.");
+            isValid = false;
+        }
+        else
+        if(!upassword.matches(strpattern3))
+        {
+            passError.setText("Enter valid password");
+            isValid = false;
+        }
+        else
+        {
+            passError.setText("");
+            // isValid = false;
         }
         
         if(isValid)

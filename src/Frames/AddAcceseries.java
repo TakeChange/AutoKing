@@ -52,7 +52,6 @@ public class AddAcceseries extends javax.swing.JFrame {
         acc7 = new javax.swing.JTextField();
         acc2 = new javax.swing.JTextField();
         clear = new javax.swing.JButton();
-        acc6 = new com.toedter.calendar.JDateChooser();
         jButton2 = new javax.swing.JButton();
         text1 = new javax.swing.JLabel();
         text2 = new javax.swing.JLabel();
@@ -61,6 +60,7 @@ public class AddAcceseries extends javax.swing.JFrame {
         text5 = new javax.swing.JLabel();
         text6 = new javax.swing.JLabel();
         text7 = new javax.swing.JLabel();
+        acc6 = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -183,7 +183,6 @@ public class AddAcceseries extends javax.swing.JFrame {
             }
         });
         jPanel3.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 680, 120, -1));
-        jPanel3.add(acc6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 540, 240, 30));
 
         jButton2.setBackground(new java.awt.Color(255, 165, 0));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -216,6 +215,7 @@ public class AddAcceseries extends javax.swing.JFrame {
 
         text7.setForeground(new java.awt.Color(255, 0, 0));
         jPanel3.add(text7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 640, 240, 20));
+        jPanel3.add(acc6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 540, 240, 30));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 530, 750));
 
