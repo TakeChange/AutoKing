@@ -63,6 +63,7 @@ public class AddAcceseries extends javax.swing.JFrame {
         acc6 = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1020, 690));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -76,7 +77,7 @@ public class AddAcceseries extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/backIcon.png"))); // NOI18N
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 750));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 650));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -97,32 +98,32 @@ public class AddAcceseries extends javax.swing.JFrame {
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 110, 30));
 
         jLabel16.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel16.setText("Accesories Price               :");
-        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
+        jLabel16.setText("Accesories Price                  :");
+        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
 
         jLabel17.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel17.setText("Accessories Name           :");
-        jPanel3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
+        jLabel17.setText("Accessories Name               :");
+        jPanel3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
 
         jLabel18.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel18.setText("Accesaries Company Name :");
-        jPanel3.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, -1, -1));
+        jLabel18.setText("Accesories Company Name  :");
+        jPanel3.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, -1, -1));
 
         jLabel19.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel19.setText("Supplier Name                 :");
-        jPanel3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 610, -1, -1));
+        jLabel19.setText("Supplier Name                    :");
+        jPanel3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, -1, -1));
 
         jLabel20.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel20.setText("Accesaries Quantity         :");
-        jPanel3.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, -1));
+        jLabel20.setText("Accesories Quantity            :");
+        jPanel3.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, -1));
 
         jLabel21.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel21.setText("Accesaries issue date      :");
-        jPanel3.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, -1, -1));
+        jLabel21.setText("Accesories issue date          :");
+        jPanel3.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, -1, -1));
 
         jLabel22.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel22.setText("Product Id                        :");
-        jPanel3.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, 20));
+        jLabel22.setText("Product Id                           :");
+        jPanel3.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, 20));
 
         acc3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         acc3.setCaretColor(new java.awt.Color(255, 102, 0));
@@ -131,11 +132,11 @@ public class AddAcceseries extends javax.swing.JFrame {
                 acc3ActionPerformed(evt);
             }
         });
-        jPanel3.add(acc3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 330, 240, 30));
+        jPanel3.add(acc3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, 240, 30));
 
         acc1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         acc1.setCaretColor(new java.awt.Color(255, 102, 0));
-        jPanel3.add(acc1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 240, 30));
+        jPanel3.add(acc1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, 240, 30));
 
         acc4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         acc4.setCaretColor(new java.awt.Color(255, 102, 0));
@@ -144,7 +145,7 @@ public class AddAcceseries extends javax.swing.JFrame {
                 acc4ActionPerformed(evt);
             }
         });
-        jPanel3.add(acc4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 400, 240, 30));
+        jPanel3.add(acc4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 340, 240, 30));
 
         acc5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         acc5.setCaretColor(new java.awt.Color(255, 102, 0));
@@ -153,7 +154,7 @@ public class AddAcceseries extends javax.swing.JFrame {
                 acc5ActionPerformed(evt);
             }
         });
-        jPanel3.add(acc5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 470, 240, 30));
+        jPanel3.add(acc5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 400, 240, 30));
 
         acc7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         acc7.setCaretColor(new java.awt.Color(255, 102, 0));
@@ -162,7 +163,7 @@ public class AddAcceseries extends javax.swing.JFrame {
                 acc7ActionPerformed(evt);
             }
         });
-        jPanel3.add(acc7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 610, 240, 30));
+        jPanel3.add(acc7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 520, 240, 30));
 
         acc2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         acc2.setCaretColor(new java.awt.Color(255, 102, 0));
@@ -171,7 +172,7 @@ public class AddAcceseries extends javax.swing.JFrame {
                 acc2ActionPerformed(evt);
             }
         });
-        jPanel3.add(acc2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, 240, 30));
+        jPanel3.add(acc2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 240, 30));
 
         clear.setBackground(new java.awt.Color(255, 165, 0));
         clear.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -182,7 +183,7 @@ public class AddAcceseries extends javax.swing.JFrame {
                 clearActionPerformed(evt);
             }
         });
-        jPanel3.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 680, 120, -1));
+        jPanel3.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 600, 120, 30));
 
         jButton2.setBackground(new java.awt.Color(255, 165, 0));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -193,31 +194,31 @@ public class AddAcceseries extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 680, 120, 30));
+        jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 600, 120, 30));
 
         text1.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel3.add(text1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 240, -1));
+        jPanel3.add(text1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 240, 20));
 
         text2.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel3.add(text2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 290, 240, -1));
+        jPanel3.add(text2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, 240, 20));
 
         text3.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel3.add(text3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, 240, -1));
+        jPanel3.add(text3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 240, 20));
 
         text4.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel3.add(text4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 430, 240, -1));
+        jPanel3.add(text4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 370, 240, 20));
 
         text5.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel3.add(text5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 500, 240, -1));
+        jPanel3.add(text5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 430, 240, 20));
 
         text6.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel3.add(text6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 570, 240, -1));
+        jPanel3.add(text6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 490, 240, 20));
 
         text7.setForeground(new java.awt.Color(255, 0, 0));
         jPanel3.add(text7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 640, 240, 20));
-        jPanel3.add(acc6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 540, 240, 30));
+        jPanel3.add(acc6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 460, 240, 30));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 530, 750));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 530, 650));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 750));
 
