@@ -71,17 +71,17 @@ public class ForgotPass extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Bodoni MT", 1, 28)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 165, 0));
         jLabel3.setText("CREATE NEW PASSWORD ");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 390, 40));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 390, 40));
 
         jLabel4.setText("Do not worry  | We will help you to recover password");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, -1, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setText("New Password         :");
+        jLabel5.setText("New password         :");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setText("Confirm Password   :");
+        jLabel6.setText("Confirm password   :");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 180, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -104,7 +104,7 @@ public class ForgotPass extends javax.swing.JFrame {
                 clearActionPerformed(evt);
             }
         });
-        jPanel2.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, 100, -1));
+        jPanel2.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 410, 100, -1));
 
         t1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         t1.addActionListener(new java.awt.event.ActionListener() {
@@ -145,7 +145,7 @@ public class ForgotPass extends javax.swing.JFrame {
                 save1ActionPerformed(evt);
             }
         });
-        jPanel2.add(save1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, 100, -1));
+        jPanel2.add(save1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 410, 100, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, 520, 520));
 
