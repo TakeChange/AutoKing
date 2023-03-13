@@ -81,8 +81,8 @@ public class Addcustomer extends javax.swing.JFrame {
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 220, 40));
 
         jLabel16.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        jLabel16.setText("Date:");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, -1, 20));
+        jLabel16.setText("Date    :");
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, 60, 20));
 
         jLabel17.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         jLabel17.setText("Customer name         :");
@@ -132,8 +132,8 @@ public class Addcustomer extends javax.swing.JFrame {
         jPanel2.add(save, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 540, 120, -1));
 
         jLabel21.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel21.setText("Customer  id     :");
-        jPanel2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, 30));
+        jLabel21.setText("Customer  id              :");
+        jPanel2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 190, 30));
 
         t1.setForeground(new java.awt.Color(255, 0, 0));
         jPanel2.add(t1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 260, 20));
@@ -174,7 +174,7 @@ public class Addcustomer extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(255, 0, 0));
         jLabel9.setText("*");
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 380, 40, 30));
-        jPanel2.add(cust6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 30, -1, -1));
+        jPanel2.add(cust6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, -1, -1));
 
         t6.setForeground(new java.awt.Color(255, 51, 51));
         jPanel2.add(t6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 60, 110, 20));
