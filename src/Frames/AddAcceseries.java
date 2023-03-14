@@ -182,7 +182,7 @@ public class AddAcceseries extends javax.swing.JFrame {
                 clearActionPerformed(evt);
             }
         });
-        jPanel3.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 680, 120, -1));
+        jPanel3.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 680, 120, 30));
         jPanel3.add(acc6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 540, 240, 30));
 
         jButton2.setBackground(new java.awt.Color(255, 165, 0));

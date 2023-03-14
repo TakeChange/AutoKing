@@ -119,6 +119,11 @@ public class Dashbord extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText(" Add Accesaries");
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
         panel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 160, 40));
 
         jPanel1.add(panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 190, 0));
@@ -307,6 +312,12 @@ public class Dashbord extends javax.swing.JFrame {
                    panal4.setSize(0,0);
 
     }//GEN-LAST:event_panal4MouseExited
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        AddAcceseries obj = new  AddAcceseries();
+        this.hide();
+        obj.setVisible(true);
+    }//GEN-LAST:event_jLabel6MouseClicked
 
     /**
      * @param args the command line arguments
