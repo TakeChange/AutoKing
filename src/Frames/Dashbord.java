@@ -4,6 +4,8 @@
  */
 package Frames;
 
+import java.awt.Color;
+
 /**
  *
  * @author acer
@@ -29,31 +31,53 @@ public class Dashbord extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         invoice = new javax.swing.JLabel();
         Accesaries1 = new javax.swing.JLabel();
-        panel1 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        panal2 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         customer1 = new javax.swing.JLabel();
-        panal3 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         supplier1 = new javax.swing.JLabel();
+        panal2 = new javax.swing.JPanel();
+        custdet = new javax.swing.JLabel();
+        addcust = new javax.swing.JLabel();
+        panal5 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        panal6 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        panal7 = new javax.swing.JPanel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
         panal4 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        invdet = new javax.swing.JLabel();
+        addinv = new javax.swing.JLabel();
+        panal3 = new javax.swing.JPanel();
+        addsup = new javax.swing.JLabel();
+        supdet = new javax.swing.JLabel();
+        panal8 = new javax.swing.JPanel();
+        accdet = new javax.swing.JLabel();
+        addacc = new javax.swing.JLabel();
+        panal9 = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        panal10 = new javax.swing.JPanel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        panal11 = new javax.swing.JPanel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1200, 700));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
         jPanel1.setMinimumSize(new java.awt.Dimension(1000, 625));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -61,21 +85,22 @@ public class Dashbord extends javax.swing.JFrame {
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Dashbord image.png"))); // NOI18N
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, -1, -1));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 120));
+        jLabel2.setFont(new java.awt.Font("Serif", 1, 48)); // NOI18N
+        jLabel2.setText("AutoKing car care");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 30, 450, -1));
+
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/backIcon.png"))); // NOI18N
+        jPanel3.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 40, -1));
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 110));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 950, 580));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 930, 590));
 
-        jLabel3.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Add Accesaries");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 30));
-
-        invoice.setFont(new java.awt.Font("Segoe UI Emoji", 1, 22)); // NOI18N
-        invoice.setForeground(new java.awt.Color(255, 255, 255));
+        invoice.setFont(new java.awt.Font("Segoe UI Emoji", 1, 25)); // NOI18N
         invoice.setText("Invoice");
         invoice.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -85,10 +110,10 @@ public class Dashbord extends javax.swing.JFrame {
                 invoiceMouseExited(evt);
             }
         });
-        jPanel1.add(invoice, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 530, 110, 30));
+        jPanel1.add(invoice, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 530, 110, 30));
 
-        Accesaries1.setFont(new java.awt.Font("Segoe UI Emoji", 1, 22)); // NOI18N
-        Accesaries1.setForeground(new java.awt.Color(255, 255, 255));
+        Accesaries1.setBackground(new java.awt.Color(255, 102, 0));
+        Accesaries1.setFont(new java.awt.Font("Segoe UI Emoji", 1, 25)); // NOI18N
         Accesaries1.setText("Accesaries");
         Accesaries1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -98,38 +123,34 @@ public class Dashbord extends javax.swing.JFrame {
                 Accesaries1MouseExited(evt);
             }
         });
-        jPanel1.add(Accesaries1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 130, 30));
+        jPanel1.add(Accesaries1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 140, 30));
 
-        panel1.setBackground(new java.awt.Color(0, 102, 102));
-        panel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        customer1.setBackground(new java.awt.Color(0, 0, 0));
+        customer1.setFont(new java.awt.Font("Segoe UI Emoji", 1, 25)); // NOI18N
+        customer1.setText("Customer");
+        customer1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                panel1MouseEntered(evt);
+                customer1MouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                panel1MouseExited(evt);
+                customer1MouseExited(evt);
             }
         });
-        panel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(customer1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 130, 30));
 
-        jLabel5.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText(" Accesaries Detail");
-        panel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 160, 40));
-
-        jLabel6.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText(" Add Accesaries");
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
+        supplier1.setFont(new java.awt.Font("Segoe UI Emoji", 1, 25)); // NOI18N
+        supplier1.setText("Supplier");
+        supplier1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                supplier1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                supplier1MouseExited(evt);
             }
         });
-        panel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 160, 40));
+        jPanel1.add(supplier1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, 110, 30));
 
-        jPanel1.add(panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 190, 0));
-
-        panal2.setBackground(new java.awt.Color(0, 102, 102));
-        panal2.setForeground(new java.awt.Color(0, 102, 102));
+        panal2.setBackground(new java.awt.Color(0, 153, 153));
         panal2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 panal2MouseEntered(evt);
@@ -140,73 +161,107 @@ public class Dashbord extends javax.swing.JFrame {
         });
         panal2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText(" Add Accesaries");
-        panal2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, 160, 40));
-
-        jLabel7.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("customer Detail");
-        panal2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 160, 40));
-
-        jLabel2.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Add Custumer");
-        panal2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-
-        jPanel1.add(panal2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, 190, 0));
-
-        customer1.setFont(new java.awt.Font("Segoe UI Emoji", 1, 22)); // NOI18N
-        customer1.setForeground(new java.awt.Color(255, 255, 255));
-        customer1.setText("Customer");
-        customer1.addMouseListener(new java.awt.event.MouseAdapter() {
+        custdet.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
+        custdet.setForeground(new java.awt.Color(255, 255, 255));
+        custdet.setText("Customer Detail");
+        custdet.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                customer1MouseEntered(evt);
+                custdetMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                customer1MouseExited(evt);
+                custdetMouseExited(evt);
             }
         });
-        jPanel1.add(customer1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 130, 30));
+        panal2.add(custdet, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 160, -1));
 
-        panal3.setBackground(new java.awt.Color(0, 102, 102));
-        panal3.addMouseListener(new java.awt.event.MouseAdapter() {
+        addcust.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
+        addcust.setForeground(new java.awt.Color(255, 255, 255));
+        addcust.setText("Add custumor");
+        addcust.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addcustMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                panal3MouseEntered(evt);
+                addcustMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                panal3MouseExited(evt);
+                addcustMouseExited(evt);
             }
         });
-        panal3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panal2.add(addcust, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 120, -1));
 
-        jLabel8.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Add Custumer");
-        panal3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 10, 120, -1));
-
-        jLabel9.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText(" customer Detail");
-        panal3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 170, 40));
-
-        jPanel1.add(panal3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 430, 190, 0));
-
-        supplier1.setFont(new java.awt.Font("Segoe UI Emoji", 1, 22)); // NOI18N
-        supplier1.setForeground(new java.awt.Color(255, 255, 255));
-        supplier1.setText("Supplier");
-        supplier1.addMouseListener(new java.awt.event.MouseAdapter() {
+        panal5.setBackground(new java.awt.Color(0, 102, 102));
+        panal5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                supplier1MouseEntered(evt);
+                panal5MouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                supplier1MouseExited(evt);
+                panal5MouseExited(evt);
             }
         });
-        jPanel1.add(supplier1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 400, 110, 30));
+        panal5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panal4.setBackground(new java.awt.Color(0, 102, 102));
+        jLabel14.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("Customer Detail");
+        panal5.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 160, -1));
+
+        jLabel15.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("Add custumor");
+        panal5.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 120, -1));
+
+        panal2.add(panal5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 180, 100));
+
+        panal6.setBackground(new java.awt.Color(0, 102, 102));
+        panal6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                panal6MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                panal6MouseExited(evt);
+            }
+        });
+        panal6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel16.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("Customer Detail");
+        panal6.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 160, -1));
+
+        jLabel17.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setText("Add custumor");
+        panal6.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 120, -1));
+
+        panal7.setBackground(new java.awt.Color(0, 102, 102));
+        panal7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                panal7MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                panal7MouseExited(evt);
+            }
+        });
+        panal7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel18.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setText("Customer Detail");
+        panal7.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 160, -1));
+
+        jLabel19.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("Add custumor");
+        panal7.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 120, -1));
+
+        panal6.add(panal7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 180, 100));
+
+        panal2.add(panal6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 180, 100));
+
+        jPanel1.add(panal2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, 150, 90));
+
+        panal4.setBackground(new java.awt.Color(0, 153, 153));
         panal4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 panal4MouseEntered(evt);
@@ -217,17 +272,199 @@ public class Dashbord extends javax.swing.JFrame {
         });
         panal4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel10.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Invoice Detail");
-        panal4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 120, -1));
+        invdet.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
+        invdet.setForeground(new java.awt.Color(255, 255, 255));
+        invdet.setText("Invoice Detail");
+        invdet.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                invdetMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                invdetMouseExited(evt);
+            }
+        });
+        panal4.add(invdet, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 120, -1));
 
-        jLabel11.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Add Invoice");
-        panal4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 120, -1));
+        addinv.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
+        addinv.setForeground(new java.awt.Color(255, 255, 255));
+        addinv.setText("Add Invoice");
+        addinv.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                addinvMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                addinvMouseExited(evt);
+            }
+        });
+        panal4.add(addinv, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 120, -1));
 
-        jPanel1.add(panal4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 550, 180, 0));
+        jPanel1.add(panal4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 560, 140, 80));
+
+        panal3.setBackground(new java.awt.Color(0, 153, 153));
+        panal3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                panal3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                panal3MouseExited(evt);
+            }
+        });
+        panal3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        addsup.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
+        addsup.setForeground(new java.awt.Color(255, 255, 255));
+        addsup.setText("Add Supplier");
+        addsup.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addsupMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                addsupMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                addsupMouseExited(evt);
+            }
+        });
+        panal3.add(addsup, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 10, 120, -1));
+
+        supdet.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
+        supdet.setForeground(new java.awt.Color(255, 255, 255));
+        supdet.setText(" Supplier Detail");
+        supdet.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                supdetMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                supdetMouseExited(evt);
+            }
+        });
+        panal3.add(supdet, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 160, 40));
+
+        jPanel1.add(panal3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, 170, 90));
+
+        panal8.setBackground(new java.awt.Color(0, 153, 153));
+        panal8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                panal8MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                panal8MouseExited(evt);
+            }
+        });
+        panal8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        accdet.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
+        accdet.setForeground(new java.awt.Color(255, 255, 255));
+        accdet.setText("Accesaries Detail");
+        accdet.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                accdetMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                accdetMouseExited(evt);
+            }
+        });
+        panal8.add(accdet, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 160, -1));
+
+        addacc.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
+        addacc.setForeground(new java.awt.Color(255, 255, 255));
+        addacc.setText("Add Accesaries");
+        addacc.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addaccMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                addaccMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                addaccMouseExited(evt);
+            }
+        });
+        panal8.add(addacc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 140, -1));
+
+        panal9.setBackground(new java.awt.Color(0, 102, 102));
+        panal9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                panal9MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                panal9MouseExited(evt);
+            }
+        });
+        panal9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel22.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel22.setText("Customer Detail");
+        panal9.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 160, -1));
+
+        jLabel23.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel23.setText("Add custumor");
+        panal9.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 120, -1));
+
+        panal8.add(panal9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 180, 100));
+
+        panal10.setBackground(new java.awt.Color(0, 102, 102));
+        panal10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                panal10MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                panal10MouseExited(evt);
+            }
+        });
+        panal10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel24.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel24.setText("Customer Detail");
+        panal10.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 160, -1));
+
+        jLabel25.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel25.setText("Add custumor");
+        panal10.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 120, -1));
+
+        panal11.setBackground(new java.awt.Color(0, 102, 102));
+        panal11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                panal11MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                panal11MouseExited(evt);
+            }
+        });
+        panal11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel26.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel26.setText("Customer Detail");
+        panal11.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 160, -1));
+
+        jLabel27.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel27.setText("Add custumor");
+        panal11.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 120, -1));
+
+        panal10.add(panal11, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 180, 100));
+
+        panal8.add(panal10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 180, 100));
+
+        jPanel1.add(panal8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 150, 80));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Dashbord icons/icons8-supplier.png"))); // NOI18N
+        jLabel3.setMaximumSize(new java.awt.Dimension(40, 40));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/invoice.png"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, -1, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/cust.png"))); // NOI18N
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/accesaries.png"))); // NOI18N
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 700));
 
@@ -237,7 +474,7 @@ public class Dashbord extends javax.swing.JFrame {
 
     private void invoiceMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_invoiceMouseEntered
         // TODO add your handling code here:
-           panal4.setSize(180,100);
+        
     }//GEN-LAST:event_invoiceMouseEntered
 
     private void invoiceMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_invoiceMouseExited
@@ -246,78 +483,194 @@ public class Dashbord extends javax.swing.JFrame {
 
     private void Accesaries1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Accesaries1MouseEntered
         // TODO add your handling code here:
-          panel1.setSize(170,80);
+       
     }//GEN-LAST:event_Accesaries1MouseEntered
 
     private void Accesaries1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Accesaries1MouseExited
         // TODO add your handling code here:
     }//GEN-LAST:event_Accesaries1MouseExited
 
-    private void panel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel1MouseEntered
-        // TODO add your handling code here:
-         panel1.setSize(170,80);
-    }//GEN-LAST:event_panel1MouseEntered
-
-    private void panel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel1MouseExited
-        // TODO add your handling code here:
-         panel1.setSize(0,0);
-    }//GEN-LAST:event_panel1MouseExited
-
-    private void panal2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panal2MouseEntered
-        // TODO add your handling code here:
-         panal2.setSize(190,90);
-    }//GEN-LAST:event_panal2MouseEntered
-
-    private void panal2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panal2MouseExited
-         panal2.setSize(0,0);        //TODO add your handling code here:
-    }//GEN-LAST:event_panal2MouseExited
-
     private void customer1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_customer1MouseEntered
-        // TODO add your handling code here:
-          panal2.setSize(190,100);
+      
     }//GEN-LAST:event_customer1MouseEntered
 
     private void customer1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_customer1MouseExited
-        // TODO add your handling code here:
+      
     }//GEN-LAST:event_customer1MouseExited
 
     private void panal3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panal3MouseEntered
-        // TODO add your handling code here:
-          panal3.setSize(190,100);
+     
     }//GEN-LAST:event_panal3MouseEntered
 
     private void panal3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panal3MouseExited
-        // TODO add your handling code here:
-          panal3.setSize(0,0);
+        
     }//GEN-LAST:event_panal3MouseExited
 
     private void supplier1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_supplier1MouseEntered
-        // TODO add your handling code here:
-                   panal3.setSize(190,100);
+       
 
     }//GEN-LAST:event_supplier1MouseEntered
 
     private void supplier1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_supplier1MouseExited
-        // TODO add your handling code here:
     }//GEN-LAST:event_supplier1MouseExited
 
-    private void panal4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panal4MouseEntered
-        // TODO add your handling code here:
-                   panal4.setSize(180,100);
+    private void panal2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panal2MouseEntered
+        
 
+    }//GEN-LAST:event_panal2MouseEntered
+
+    private void panal2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panal2MouseExited
+       
+    }//GEN-LAST:event_panal2MouseExited
+
+    private void panal4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panal4MouseEntered
+      
     }//GEN-LAST:event_panal4MouseEntered
 
     private void panal4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panal4MouseExited
         // TODO add your handling code here:
-                   panal4.setSize(0,0);
-
     }//GEN-LAST:event_panal4MouseExited
 
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        AddAcceseries obj = new  AddAcceseries();
+    private void panal5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panal5MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_panal5MouseEntered
+
+    private void panal5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panal5MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_panal5MouseExited
+
+    private void panal7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panal7MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_panal7MouseEntered
+
+    private void panal7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panal7MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_panal7MouseExited
+
+    private void panal6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panal6MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_panal6MouseEntered
+
+    private void panal6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panal6MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_panal6MouseExited
+
+    private void panal9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panal9MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_panal9MouseEntered
+
+    private void panal9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panal9MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_panal9MouseExited
+
+    private void panal11MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panal11MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_panal11MouseEntered
+
+    private void panal11MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panal11MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_panal11MouseExited
+
+    private void panal10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panal10MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_panal10MouseEntered
+
+    private void panal10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panal10MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_panal10MouseExited
+
+    private void panal8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panal8MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_panal8MouseEntered
+
+    private void panal8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panal8MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_panal8MouseExited
+
+    private void addaccMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addaccMouseEntered
+       addacc.setForeground(new Color(0,0,0));
+    }//GEN-LAST:event_addaccMouseEntered
+
+    private void addaccMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addaccMouseExited
+       addacc.setForeground(new Color(255,250,250));
+    }//GEN-LAST:event_addaccMouseExited
+
+    private void accdetMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accdetMouseEntered
+        // TODO add your handling code here:
+          accdet.setForeground(new Color(0,0,0));
+    }//GEN-LAST:event_accdetMouseEntered
+
+    private void accdetMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accdetMouseExited
+        // TODO add your handling code here:
+         accdet.setForeground(new Color(255,250,250));
+    }//GEN-LAST:event_accdetMouseExited
+
+    private void addcustMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addcustMouseEntered
+        // TODO add your handling code here:
+         addcust.setForeground(new Color(0,0,0));
+    }//GEN-LAST:event_addcustMouseEntered
+
+    private void addcustMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addcustMouseExited
+         addcust.setForeground(new Color(255,250,250));
+    }//GEN-LAST:event_addcustMouseExited
+
+    private void custdetMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_custdetMouseEntered
+        custdet.setForeground(new Color(0,0,0));
+    }//GEN-LAST:event_custdetMouseEntered
+
+    private void custdetMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_custdetMouseExited
+         custdet.setForeground(new Color(255,250,250));
+    }//GEN-LAST:event_custdetMouseExited
+
+    private void addsupMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addsupMouseEntered
+          addsup.setForeground(new Color(0,0,0));
+    }//GEN-LAST:event_addsupMouseEntered
+
+    private void addsupMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addsupMouseExited
+         addsup.setForeground(new Color(255,250,250));
+    }//GEN-LAST:event_addsupMouseExited
+
+    private void supdetMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_supdetMouseEntered
+          supdet.setForeground(new Color(0,0,0));
+    }//GEN-LAST:event_supdetMouseEntered
+
+    private void supdetMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_supdetMouseExited
+          supdet.setForeground(new Color(255,250,250));
+    }//GEN-LAST:event_supdetMouseExited
+
+    private void addinvMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addinvMouseEntered
+        addinv.setForeground(new Color(0,0,0));
+    }//GEN-LAST:event_addinvMouseEntered
+
+    private void addinvMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addinvMouseExited
+         addinv.setForeground(new Color(255,250,250));
+    }//GEN-LAST:event_addinvMouseExited
+
+    private void invdetMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_invdetMouseEntered
+          invdet.setForeground(new Color(0,0,0));
+    }//GEN-LAST:event_invdetMouseEntered
+
+    private void invdetMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_invdetMouseExited
+          invdet.setForeground(new Color(255,250,250));
+    }//GEN-LAST:event_invdetMouseExited
+
+    private void addaccMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addaccMouseClicked
+        AddAcceseries ac = new AddAcceseries();
         this.hide();
-        obj.setVisible(true);
-    }//GEN-LAST:event_jLabel6MouseClicked
+        ac.setVisible(true);
+    }//GEN-LAST:event_addaccMouseClicked
+
+    private void addcustMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addcustMouseClicked
+        Addcustomer cu = new Addcustomer();
+        this.hide();
+        cu.setVisible(true);
+    }//GEN-LAST:event_addcustMouseClicked
+
+    private void addsupMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addsupMouseClicked
+        AddSupplier ac = new AddSupplier();
+        this.hide();
+        ac.setVisible(true);
+    }//GEN-LAST:event_addsupMouseClicked
 
     /**
      * @param args the command line arguments
@@ -357,26 +710,48 @@ public class Dashbord extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Accesaries1;
+    private javax.swing.JLabel accdet;
+    private javax.swing.JLabel addacc;
+    private javax.swing.JLabel addcust;
+    private javax.swing.JLabel addinv;
+    private javax.swing.JLabel addsup;
+    private javax.swing.JLabel custdet;
     private javax.swing.JLabel customer1;
+    private javax.swing.JLabel invdet;
     private javax.swing.JLabel invoice;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel panal10;
+    private javax.swing.JPanel panal11;
     private javax.swing.JPanel panal2;
     private javax.swing.JPanel panal3;
     private javax.swing.JPanel panal4;
-    private javax.swing.JPanel panel1;
+    private javax.swing.JPanel panal5;
+    private javax.swing.JPanel panal6;
+    private javax.swing.JPanel panal7;
+    private javax.swing.JPanel panal8;
+    private javax.swing.JPanel panal9;
+    private javax.swing.JLabel supdet;
     private javax.swing.JLabel supplier1;
     // End of variables declaration//GEN-END:variables
 }
