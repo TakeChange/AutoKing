@@ -53,9 +53,9 @@ public class AddSupplier extends javax.swing.JFrame {
         MnoError = new javax.swing.JLabel();
         emailError = new javax.swing.JLabel();
         addError = new javax.swing.JLabel();
-        sup6 = new com.toedter.calendar.JDateChooser();
         SnoError = new javax.swing.JLabel();
         b2 = new javax.swing.JButton();
+        sup6 = new com.toedter.calendar.JDateChooser();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
@@ -84,7 +84,7 @@ public class AddSupplier extends javax.swing.JFrame {
         jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
 
         jLabel17.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel17.setText("Customer name         :");
+        jLabel17.setText("Supplier name         :");
         jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
 
         jLabel18.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
@@ -148,7 +148,6 @@ public class AddSupplier extends javax.swing.JFrame {
 
         addError.setForeground(new java.awt.Color(255, 0, 0));
         jPanel2.add(addError, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 500, 260, 20));
-        jPanel2.add(sup6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, 130, -1));
 
         SnoError.setForeground(new java.awt.Color(255, 0, 0));
         jPanel2.add(SnoError, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 260, 20));
@@ -164,6 +163,7 @@ public class AddSupplier extends javax.swing.JFrame {
             }
         });
         jPanel2.add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 540, 120, -1));
+        jPanel2.add(sup6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, 120, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 580, 770));
 

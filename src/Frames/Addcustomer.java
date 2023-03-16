@@ -54,9 +54,9 @@ public class Addcustomer extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        cust6 = new com.toedter.calendar.JDateChooser();
         t6 = new javax.swing.JLabel();
         clear = new javax.swing.JButton();
+        cust6 = new com.toedter.calendar.JDateChooser();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
@@ -174,7 +174,6 @@ public class Addcustomer extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(255, 0, 0));
         jLabel9.setText("*");
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 380, 40, 30));
-        jPanel2.add(cust6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, -1, -1));
 
         t6.setForeground(new java.awt.Color(255, 51, 51));
         jPanel2.add(t6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 60, 110, 20));
@@ -189,6 +188,7 @@ public class Addcustomer extends javax.swing.JFrame {
             }
         });
         jPanel2.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 540, 120, -1));
+        jPanel2.add(cust6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, -1, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 580, 770));
 
