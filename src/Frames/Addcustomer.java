@@ -54,9 +54,9 @@ public class Addcustomer extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        cust6 = new com.toedter.calendar.JDateChooser();
         t6 = new javax.swing.JLabel();
         clear = new javax.swing.JButton();
+        cust6 = new com.toedter.calendar.JDateChooser();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
@@ -82,7 +82,7 @@ public class Addcustomer extends javax.swing.JFrame {
 
         jLabel16.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel16.setText("Date    :");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, 60, 20));
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, 60, 20));
 
         jLabel17.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         jLabel17.setText("Customer name         :");
@@ -174,7 +174,6 @@ public class Addcustomer extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(255, 0, 0));
         jLabel9.setText("*");
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 380, 40, 30));
-        jPanel2.add(cust6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, -1, -1));
 
         t6.setForeground(new java.awt.Color(255, 51, 51));
         jPanel2.add(t6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 60, 110, 20));
@@ -189,6 +188,7 @@ public class Addcustomer extends javax.swing.JFrame {
             }
         });
         jPanel2.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 540, 120, -1));
+        jPanel2.add(cust6, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 30, 150, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 580, 770));
 
@@ -212,35 +212,60 @@ public class Addcustomer extends javax.swing.JFrame {
         
 
 
-
+          String strpattern1="^([a-zA-Z_$][a-zA-Z\\d_$]*)$";
          String id= cust1.getText();
         
         //For id Customer id 
         if(id.equals(""))
         {
             t1.setText("Customer id do not empty.");
+            isValid=false;
         }
+        else 
+            if(!id.matches(strpattern1))
+            {
+                t1.setText("Customer id invalid");
+                isValid=false;
+            }
+            
         else
         {
             t1.setText("");
         }
         //For id Customer name 
+        String strpattern2="^([a-zA-Z]+\\.?)";
         String name= cust2.getText();
         if(name.equals(""))
         {
             t2.setText("Customer name do not empty.");
+            isValid=false;
         }
+        else 
+            if(!name.matches( strpattern2))
+            {
+                t2.setText("Customer name invalid");
+                isValid=false;
+            }
         else
        {
             t2.setText("");
         }
         
         //For id Customer Mobile
+        String strpattern3=("(0/91)?[7-9][0-9]{9}");
         String mobile= cust3.getText();
+        
         if(mobile.equals(""))
         {
             t3.setText("Mobile do not empty.");
+            isValid=false;
         }
+        else 
+            if(!mobile.matches( strpattern3))
+            {
+                t3.setText("Mobile number invalid");
+                isValid=false;
+            }
         else
         {
             t3.setText("");
@@ -248,23 +273,39 @@ public class Addcustomer extends javax.swing.JFrame {
         
         
         //For id Customer Email
-        String quantity= cust4.getText();
-        if(quantity.equals(""))
+        String strpattern4="^[A-Za-z0-9+_.-]+@(.+)$";
+        
+        String email= cust4.getText();
+        if(email.equals(""))
         {
             t4.setText("Email do not empty.");
         }
+        else 
+            if(!email.matches( strpattern4))
+            {
+                t4.setText("Email is invalid");
+                isValid=false;
+            }
         else
+        
         {
             t4.setText("");
         }
         
         
         //For id Customer Address
-        String cname= cust5.getText();
-        if(cname.equals(""))
+        String strpattern5=("\\d+\\s+([a-zA-Z]+|[a-zA-Z]+\\s[a-zA-Z]+)");
+        String address= cust5.getText();
+        if(address.equals(""))
         {
             t5.setText("Address do not empty.");
         }
+         else 
+            if(!address.matches( strpattern5))
+            {
+                t5.setText("Address is invalid");
+                isValid=false;
+            }
         else
         {
             t5.setText("");

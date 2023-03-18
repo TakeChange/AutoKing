@@ -127,7 +127,7 @@ public class Authentication extends javax.swing.JFrame {
 
         text2.setForeground(new java.awt.Color(255, 0, 0));
         jPanel2.add(text2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 260, 20));
-        jPanel2.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, 260, 30));
+        jPanel2.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 250, 30));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, 480, 520));
 
