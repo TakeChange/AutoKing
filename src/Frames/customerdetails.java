@@ -8,12 +8,12 @@ package Frames;
  *
  * @author vaish
  */
-public class customerdetails extends javax.swing.JFrame {
+public class Customerdetails extends javax.swing.JFrame {
 
     /**
      * Creates new form customerdetails
      */
-    public customerdetails() {
+    public Customerdetails() {
         initComponents();
     }
 
@@ -69,9 +69,9 @@ public class customerdetails extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 848, 400));
 
-        save1.setBackground(new java.awt.Color(153, 153, 153));
+        save1.setBackground(new java.awt.Color(0, 153, 153));
         save1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        save1.setText("Search");
+        save1.setText("SEARCH");
         save1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         save1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,20 +80,20 @@ public class customerdetails extends javax.swing.JFrame {
         });
         jPanel1.add(save1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 70, 100, -1));
 
-        save2.setBackground(new java.awt.Color(153, 153, 153));
+        save2.setBackground(new java.awt.Color(0, 153, 153));
         save2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        save2.setText("Update");
+        save2.setText("UPDATE");
         save2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         save2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 save2ActionPerformed(evt);
             }
         });
-        jPanel1.add(save2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 540, 100, -1));
+        jPanel1.add(save2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 540, 110, -1));
 
-        save3.setBackground(new java.awt.Color(153, 153, 153));
+        save3.setBackground(new java.awt.Color(0, 153, 153));
         save3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        save3.setText("Save");
+        save3.setText("SAVE");
         save3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         save3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,9 +113,9 @@ public class customerdetails extends javax.swing.JFrame {
         });
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 72, 300, 30));
 
-        save4.setBackground(new java.awt.Color(153, 153, 153));
+        save4.setBackground(new java.awt.Color(0, 153, 153));
         save4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        save4.setText("Delete");
+        save4.setText("DELETE");
         save4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         save4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -175,20 +175,21 @@ public class customerdetails extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(customerdetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Customerdetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(customerdetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Customerdetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(customerdetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Customerdetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(customerdetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Customerdetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new customerdetails().setVisible(true);
+                new Customerdetails().setVisible(true);
             }
         });
     }
