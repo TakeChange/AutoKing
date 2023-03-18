@@ -76,7 +76,7 @@ public class Addcustomer extends javax.swing.JFrame {
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Bodoni MT", 1, 28)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel3.setText("Add Customer");
+        jLabel3.setText("ADD CUSTOMER");
         jLabel3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 220, 40));
 
@@ -124,6 +124,7 @@ public class Addcustomer extends javax.swing.JFrame {
         save.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         save.setForeground(new java.awt.Color(255, 255, 255));
         save.setText("SAVE");
+        save.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveActionPerformed(evt);
@@ -182,6 +183,7 @@ public class Addcustomer extends javax.swing.JFrame {
         clear.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         clear.setForeground(new java.awt.Color(255, 255, 255));
         clear.setText("CLEAR");
+        clear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearActionPerformed(evt);
@@ -233,19 +235,19 @@ public class Addcustomer extends javax.swing.JFrame {
             t1.setText("");
         }
         //For id Customer name 
-        String strpattern2="^([a-zA-Z]+\\.?)";
+        String strpattern2="[a-z A-Z]+\\.?";
         String name= cust2.getText();
         if(name.equals(""))
         {
             t2.setText("Customer name do not empty.");
             isValid=false;
         }
-        else 
-            if(!name.matches( strpattern2))
-            {
+       else 
+           if(!name.matches( strpattern2))
+           {
                 t2.setText("Customer name invalid");
                 isValid=false;
-            }
+           }
         else
        {
             t2.setText("");
@@ -294,7 +296,7 @@ public class Addcustomer extends javax.swing.JFrame {
         
         
         //For id Customer Address
-        String strpattern5=("\\d+\\s+([a-zA-Z]+|[a-zA-Z]+\\s[a-zA-Z]+)");
+        String strpattern5="[a-z  . A-Z]+\\.?";
         String address= cust5.getText();
         if(address.equals(""))
         {
