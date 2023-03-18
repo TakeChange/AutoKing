@@ -69,7 +69,7 @@ public class AccessoriesDetails extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 930, 400));
 
-        save1.setBackground(new java.awt.Color(153, 153, 153));
+        save1.setBackground(new java.awt.Color(0, 153, 153));
         save1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         save1.setForeground(new java.awt.Color(255, 255, 255));
         save1.setText("Search");
@@ -81,7 +81,7 @@ public class AccessoriesDetails extends javax.swing.JFrame {
         });
         jPanel1.add(save1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 70, 100, -1));
 
-        save2.setBackground(new java.awt.Color(153, 153, 153));
+        save2.setBackground(new java.awt.Color(0, 153, 153));
         save2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         save2.setForeground(new java.awt.Color(255, 255, 255));
         save2.setText("UPDATE");
@@ -93,7 +93,7 @@ public class AccessoriesDetails extends javax.swing.JFrame {
         });
         jPanel1.add(save2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 540, 120, -1));
 
-        save3.setBackground(new java.awt.Color(153, 153, 153));
+        save3.setBackground(new java.awt.Color(0, 153, 153));
         save3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         save3.setForeground(new java.awt.Color(255, 255, 255));
         save3.setText("SAVE");
@@ -116,7 +116,7 @@ public class AccessoriesDetails extends javax.swing.JFrame {
         });
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 72, 300, 30));
 
-        save4.setBackground(new java.awt.Color(153, 153, 153));
+        save4.setBackground(new java.awt.Color(0, 153, 153));
         save4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         save4.setForeground(new java.awt.Color(255, 255, 255));
         save4.setText("DELETE");
