@@ -123,6 +123,7 @@ public class AddSupplier extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("SAVE");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -187,71 +188,104 @@ public class AddSupplier extends javax.swing.JFrame {
 
         // TODO add your handling code here:
         
-         boolean isValid = true;
-
+       
         //ID
-        
+        // sup123
+        String strPattern = "^([a-zA-Z_$][a-zA-Z\\d_$]*)$";
+          boolean isValid = true;
         String ID=sup1.getText();
-         if(ID.equals(""))
+        if(ID.equals(""))
         {
-            SnoError.setText("ID do not empty.");
+            SnoError.setText("Supplier id do not empty.");
+            isValid = false;
+         }
+        else
+        
+         if(!ID.matches(strPattern))
+        {
+            SnoError.setText("Supplier id invalid.");
+            isValid = false;
           
         }
-
          else
         {
             SnoError.setText("");
         }
          //name
-        
-         String Sname=sup2.getText().toString();
+         //Anuja Bhalerao
+          String strPattern1 = "[a-zA-Z]+\\.?";
+         String Sname=sup2.getText();
           if(Sname.equals(""))
         {
-            custError.setText("Customer name do not empty.");
+            custError.setText("Supplier name do not empty.");
             isValid = false;
         }
     
            else
+              if(!Sname.matches(strPattern1))
         {
-            custError.setText("");
+            custError.setText("Supplier name is invalid.");
+             isValid = false;
         }
+          else{
+                  custError.setText("");
+              }
           //mobile
-          
-          String mobile=sup3.getText().toString();
+          String strPattern2=("(0/91)?[7-9][0-9]{9}");
+          String mobile=sup3.getText();
            if(mobile.equals(""))
         {
             MnoError.setText("Mobile do not empty.");
             isValid = false;
         }
            else
+               if(!mobile.matches(strPattern2))
         {
-            MnoError.setText("");
+            MnoError.setText("Mobile number is invalid.");
+            isValid = false;
         }
+               else{
+                   MnoError.setText("");
+               }
            //email
          
-           
-           String email=sup4.getText().toString();
+           String strPattern3="^[A-Za-z0-9+_.-]+@(.+)$";
+           String email=sup4.getText();
             if(email.equals(""))
         {
             emailError.setText("Email do not empty.");
             isValid = false;
         }
              else
+               if(!email.matches(strPattern3))
         {
-            emailError.setText("");
+            emailError.setText("Email is invalid");
+            isValid = false;
         }
-            //Address
+               else{
+                   emailError.setText("");
+               }
             
-            String Address=sup5.getText().toString();
+            
+            //Address
+            String strPattern4=("\"^(\\\\d{1,}) [a-zA-Z0-9\\\\s]+(\\\\,)? [a-zA-Z]+(\\\\,)? [A-Z]{2} [0-9]{5,6}$\"");
+            String Address=sup5.getText();
                if(Address.equals(""))
         {
             addError.setText("Address do not empty.");
             isValid = false;
         }
-         else
-        {
-            addError.setText("");
-       }
+               else
+               if(!Address.matches(strPattern4))
+              {
+              addError.setText("address is invalid");
+              isValid = false;
+              }
+               else
+               {
+                   addError.setText("");
+               }
+               
                
                try
         {
