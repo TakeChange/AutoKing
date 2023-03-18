@@ -188,12 +188,17 @@ public class Login extends javax.swing.JFrame {
         String strPattern = "^[a-zA-Z0-9_.]{8,20}$";
         boolean isValid = true;
         
-         String username=t1.getText();
-
-        String upassword = t2.getText();
+        
+        String username=t1.getText();
        
-            
-        if(!username.matches(strPattern)){
+        if(username.equals(""))
+        {
+            userError.setText("Username do not empty.");
+            isValid = false;
+        }
+        else
+        if(!username.matches(strPattern))
+        {
             userError.setText("Username is invalid.");
             isValid = false;
          }
@@ -202,22 +207,13 @@ public class Login extends javax.swing.JFrame {
             userError.setText("");
         }
         
-        if(upassword.equals(""))
-        {
-            passError.setText("Password do not empty.");
-            isValid = false;
-        }
-        else
-        {
-            passError.setText("");
-        }
-        
+        String upassword = t2.getText();
         String strpattern3="^(?=.*[0-9])"+ "(?=.*[a-z])(?=.*[A-Z])" + "(?=.*[@#$%^&+=])"+ "(?=\\S+$).{8,20}$";
         String password = t1.getText();
         //boolean isValid=true;
         if(upassword.equals(""))
         {
-            userError.setText("Password do not empty.");
+            passError.setText("Password do not empty.");
             isValid = false;
         }
         else

@@ -127,6 +127,7 @@ public class ForgotPass extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel11.setText("Back to login");
+        jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 470, 90, 20));
 
         text1.setForeground(new java.awt.Color(255, 51, 51));

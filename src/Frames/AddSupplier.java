@@ -56,6 +56,11 @@ public class AddSupplier extends javax.swing.JFrame {
         SnoError = new javax.swing.JLabel();
         b2 = new javax.swing.JButton();
         sup6 = new com.toedter.calendar.JDateChooser();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
@@ -166,6 +171,31 @@ public class AddSupplier extends javax.swing.JFrame {
         jPanel2.add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 540, 120, -1));
         jPanel2.add(sup6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, 120, -1));
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel6.setText("*");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 230, 40, 30));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel7.setText("*");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 300, 40, 30));
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel8.setText("*");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 380, 40, 30));
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel9.setText("*");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 460, 40, 30));
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel10.setText("*");
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 160, 40, 30));
+
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 580, 770));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/supplier.png"))); // NOI18N
@@ -213,7 +243,7 @@ public class AddSupplier extends javax.swing.JFrame {
         }
          //name
          //Anuja Bhalerao
-          String strPattern1 = "[a-zA-Z]+\\.?";
+          String strPattern1 = "[a-z A-Z_.]+\\.?";
          String Sname=sup2.getText();
           if(Sname.equals(""))
         {
@@ -268,7 +298,8 @@ public class AddSupplier extends javax.swing.JFrame {
             
             
             //Address
-            String strPattern4=("\"^(\\\\d{1,}) [a-zA-Z0-9\\\\s]+(\\\\,)? [a-zA-Z]+(\\\\,)? [A-Z]{2} [0-9]{5,6}$\"");
+            //String strPattern4=("\"^(\\\\d{1,}) [a-z A-Z0-9\\\\s]+(\\\\,)? [a-z A-Z]+(\\\\,)? [A-Z]{2} [0-9]{5,6}$\"");
+             String strPattern4="[a-z A-Z_.]+\\.?";
             String Address=sup5.getText();
                if(Address.equals(""))
         {
@@ -365,6 +396,7 @@ public class AddSupplier extends javax.swing.JFrame {
     private javax.swing.JLabel emailError;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -374,6 +406,10 @@ public class AddSupplier extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField sup1;

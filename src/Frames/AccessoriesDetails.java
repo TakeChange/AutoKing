@@ -106,7 +106,7 @@ public class AccessoriesDetails extends javax.swing.JFrame {
         jPanel1.add(save3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 540, 120, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setText("Sarch by name  :");
+        jLabel2.setText("Search by name  :");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 150, 30));
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {

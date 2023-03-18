@@ -153,6 +153,7 @@ public signup() {
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("SIGNUP");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -164,6 +165,7 @@ public signup() {
         clear.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         clear.setForeground(new java.awt.Color(255, 255, 255));
         clear.setText("CLEAR");
+        clear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearActionPerformed(evt);
@@ -182,7 +184,7 @@ public signup() {
         jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(51, 51, 255));
         jLabel18.setText("Login here");
-        jLabel18.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jLabel18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 700, -1, -1));
 
         jCheckBox1.setBackground(new java.awt.Color(255, 255, 255));
