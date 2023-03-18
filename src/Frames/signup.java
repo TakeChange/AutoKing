@@ -274,7 +274,7 @@ public signup() {
         });
         jPanel2.add(adhar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 280, 40));
         jPanel2.add(text2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 280, 20));
-        jPanel2.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 270, 40));
+        jPanel2.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 280, 40));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, 560, 760));
 
