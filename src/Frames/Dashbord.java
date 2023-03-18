@@ -97,7 +97,18 @@ public class Dashbord extends javax.swing.JFrame {
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 110));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 930, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 590, Short.MAX_VALUE)
+        );
+
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 930, 590));
 
         invoice.setFont(new java.awt.Font("Segoe UI Emoji", 1, 25)); // NOI18N

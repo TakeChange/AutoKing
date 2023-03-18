@@ -128,7 +128,7 @@ public class InvoiceDetail extends javax.swing.JFrame {
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Bodoni MT", 1, 28)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("INVOICE  DETAILS");
+        jLabel4.setText("INVOICE DETAILS");
         jLabel4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, 270, 40));
 
