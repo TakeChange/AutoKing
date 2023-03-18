@@ -71,6 +71,7 @@ public class AccessoriesDetails extends javax.swing.JFrame {
 
         save1.setBackground(new java.awt.Color(153, 153, 153));
         save1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        save1.setForeground(new java.awt.Color(255, 255, 255));
         save1.setText("Search");
         save1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         save1.addActionListener(new java.awt.event.ActionListener() {
@@ -82,25 +83,27 @@ public class AccessoriesDetails extends javax.swing.JFrame {
 
         save2.setBackground(new java.awt.Color(153, 153, 153));
         save2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        save2.setText("Update");
+        save2.setForeground(new java.awt.Color(255, 255, 255));
+        save2.setText("UPDATE");
         save2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         save2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 save2ActionPerformed(evt);
             }
         });
-        jPanel1.add(save2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 540, 100, -1));
+        jPanel1.add(save2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 540, 120, -1));
 
         save3.setBackground(new java.awt.Color(153, 153, 153));
         save3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        save3.setText("Save");
+        save3.setForeground(new java.awt.Color(255, 255, 255));
+        save3.setText("SAVE");
         save3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         save3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 save3ActionPerformed(evt);
             }
         });
-        jPanel1.add(save3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 540, 100, -1));
+        jPanel1.add(save3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 540, 120, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setText("Sarch by name  :");
@@ -115,14 +118,15 @@ public class AccessoriesDetails extends javax.swing.JFrame {
 
         save4.setBackground(new java.awt.Color(153, 153, 153));
         save4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        save4.setText("Delete");
+        save4.setForeground(new java.awt.Color(255, 255, 255));
+        save4.setText("DELETE");
         save4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         save4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 save4ActionPerformed(evt);
             }
         });
-        jPanel1.add(save4, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 540, 100, -1));
+        jPanel1.add(save4, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 540, 120, -1));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Bodoni MT", 1, 28)); // NOI18N
