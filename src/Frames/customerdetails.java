@@ -95,7 +95,6 @@ public class Customerdetails extends javax.swing.JFrame {
         save3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         save3.setText("SAVE");
         save3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        save3.setFocusTraversalPolicyProvider(true);
         save3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 save3ActionPerformed(evt);
@@ -104,7 +103,7 @@ public class Customerdetails extends javax.swing.JFrame {
         jPanel1.add(save3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 540, 100, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setText("Search by name  :");
+        jLabel2.setText("Sarch by name  :");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 150, 30));
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
