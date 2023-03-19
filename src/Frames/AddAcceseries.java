@@ -238,17 +238,15 @@ public class AddAcceseries extends javax.swing.JFrame {
     }//GEN-LAST:event_acc2ActionPerformed
 
     private void Clear1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Clear1ActionPerformed
-                Clear1.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                     acc1.setText("");
-                     acc2.setText("");
-                     acc3.setText("");
-                     acc4.setText("");
-                     acc5.setText("");
-                     acc6.setCalendar(null); 
-                     acc7.setText("");}
-            });        // TODO add your handling code here:
+                Clear1.addActionListener((ActionEvent e) -> {
+                    acc1.setText("");
+                    acc2.setText("");
+                    acc3.setText("");
+                    acc4.setText("");
+                    acc5.setText("");
+                    acc6.setCalendar(null);
+                    acc7.setText("");
+                });        // TODO add your handling code here:
     }//GEN-LAST:event_Clear1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
