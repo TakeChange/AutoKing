@@ -46,6 +46,7 @@ public class Login extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         passError = new javax.swing.JLabel();
         userError = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -95,7 +96,7 @@ public class Login extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 0, 0));
         jLabel8.setText("*");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 250, -1, -1));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 250, 20, 30));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 0, 0));
@@ -127,6 +128,11 @@ public class Login extends javax.swing.JFrame {
         jPanel2.add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, 100, -1));
 
         t2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        t2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                t2ActionPerformed(evt);
+            }
+        });
         jPanel2.add(t2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 260, 30));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
@@ -158,6 +164,9 @@ public class Login extends javax.swing.JFrame {
         userError.setForeground(new java.awt.Color(255, 0, 0));
         jPanel2.add(userError, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 260, 20));
 
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/eye.png"))); // NOI18N
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, -1, -1));
+
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, 530, 510));
 
         jPanel3.setBackground(new java.awt.Color(255, 165, 0));
@@ -188,12 +197,12 @@ public class Login extends javax.swing.JFrame {
         String strPattern = "^[a-zA-Z0-9_.]{8,20}$";
         boolean isValid = true;
         
-         String username=t1.getText();
+        // String username=t1.getText();
 
-        String upassword = t2.getText();
+        //String upassword = t2.getText();
        
             
-        if(!username.matches(strPattern)){
+        /*if(!username.matches(strPattern)){
             userError.setText("Username is invalid.");
             isValid = false;
          }
@@ -210,18 +219,40 @@ public class Login extends javax.swing.JFrame {
         else
         {
             passError.setText("");
-        }
+        }*/
         
-        String strpattern3="^(?=.*[0-9])"+ "(?=.*[a-z])(?=.*[A-Z])" + "(?=.*[@#$%^&+=])"+ "(?=\\S+$).{8,20}$";
-        String password = t1.getText();
+        
+        String username = t1.getText();
         //boolean isValid=true;
-        if(upassword.equals(""))
+        if(username.equals(""))
         {
-            userError.setText("Password do not empty.");
+            userError.setText("username do not empty.");
             isValid = false;
         }
         else
-        if(!upassword.matches(strpattern3))
+        if(!username.matches( strPattern ))
+        {
+            userError.setText("Enter valid username");
+            isValid = false;
+        }
+        else
+        {
+            userError.setText("");
+            // isValid = false;
+        }
+        
+        
+        
+        String strpattern3="^(?=.*[0-9])"+ "(?=.*[a-z])(?=.*[A-Z])" + "(?=.*[@#$%^&+=])"+ "(?=\\S+$).{8,20}$";
+        String password = t2.getText();
+        //boolean isValid=true;
+        if(password.equals(""))
+        {
+            passError.setText("Password do not empty.");
+            isValid = false;
+        }
+        else
+        if(!password.matches(strpattern3))
         {
             passError.setText("Enter valid password");
             isValid = false;
@@ -278,6 +309,11 @@ public class Login extends javax.swing.JFrame {
         obj.setVisible(true);
     }//GEN-LAST:event_jLabel10MouseClicked
 
+    private void t2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t2ActionPerformed
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_t2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -321,6 +357,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
