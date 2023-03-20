@@ -66,6 +66,11 @@ public class AddAcceseries extends javax.swing.JFrame {
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 490, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/backIcon.png"))); // NOI18N
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 640));
@@ -154,7 +159,7 @@ public class AddAcceseries extends javax.swing.JFrame {
                 acc7ActionPerformed(evt);
             }
         });
-        jPanel3.add(acc7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 460, 240, 30));
+        jPanel3.add(acc7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 520, 240, 30));
 
         acc2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         acc2.setCaretColor(new java.awt.Color(255, 102, 0));
@@ -207,9 +212,7 @@ public class AddAcceseries extends javax.swing.JFrame {
 
         text7.setForeground(new java.awt.Color(255, 0, 0));
         jPanel3.add(text7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 550, 240, 20));
-        jPanel3.add(acc6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 510, 240, 40));
-        jPanel3.add(text7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 640, 240, 20));
-        jPanel3.add(acc6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 540, 240, 30));
+        jPanel3.add(acc6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 450, 240, 40));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 530, 640));
 
@@ -240,17 +243,15 @@ public class AddAcceseries extends javax.swing.JFrame {
     }//GEN-LAST:event_acc2ActionPerformed
 
     private void Clear1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Clear1ActionPerformed
-                Clear1.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                     acc1.setText("");
-                     acc2.setText("");
-                     acc3.setText("");
-                     acc4.setText("");
-                     acc5.setText("");
-                     acc6.setCalendar(null); 
-                     acc7.setText("");}
-            });        // TODO add your handling code here:
+                Clear1.addActionListener((ActionEvent e) -> {
+                    acc1.setText("");
+                    acc2.setText("");
+                    acc3.setText("");
+                    acc4.setText("");
+                    acc5.setText("");
+                    acc6.setCalendar(null);
+                    acc7.setText("");
+                });        // TODO add your handling code here:
     }//GEN-LAST:event_Clear1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -491,6 +492,13 @@ public class AddAcceseries extends javax.swing.JFrame {
         
 
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        
+        Dashbord obj = new Dashbord();
+        this.hide();
+        obj.setVisible(true);
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
      * @param args the command line arguments
