@@ -49,8 +49,8 @@ public class ForgotPass extends javax.swing.JFrame {
         text2 = new javax.swing.JLabel();
         save1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -152,10 +152,6 @@ public class ForgotPass extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 165, 0));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/forgot-removebg-preview (1).png"))); // NOI18N
-        jLabel9.setPreferredSize(new java.awt.Dimension(420, 520));
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 390, 520));
-
         jLabel13.setBackground(new java.awt.Color(153, 255, 102));
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/backIcon.png"))); // NOI18N
         jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -164,6 +160,10 @@ public class ForgotPass extends javax.swing.JFrame {
             }
         });
         jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 40));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/forgot-removebg-preview (1).png"))); // NOI18N
+        jLabel9.setPreferredSize(new java.awt.Dimension(420, 520));
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 390, 520));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 520));
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 0, 470, -1));
@@ -187,7 +187,7 @@ public class ForgotPass extends javax.swing.JFrame {
     }//GEN-LAST:event_clearActionPerformed
 
     private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
-        Login obj = new Login();
+        Authentication obj = new Authentication();
         this.hide();
         obj.setVisible(true);
 
