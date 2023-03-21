@@ -69,7 +69,7 @@ public class Authentication extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Bodoni MT", 1, 28)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 165, 0));
         jLabel3.setText("Authentication Form");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 250, 40));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 250, 40));
 
         jLabel4.setText("Please Fill The Authentication form");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, -1, -1));
@@ -104,38 +104,41 @@ public class Authentication extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("SAVE");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, 100, -1));
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, 110, -1));
 
         clear.setBackground(new java.awt.Color(255, 165, 0));
         clear.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         clear.setForeground(new java.awt.Color(255, 255, 255));
         clear.setText("CLEAR");
+        clear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearActionPerformed(evt);
             }
         });
-        jPanel2.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 370, 110, -1));
+        jPanel2.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 370, 110, -1));
 
         text1.setForeground(new java.awt.Color(255, 0, 0));
         jPanel2.add(text1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 260, 20));
 
         text2.setForeground(new java.awt.Color(255, 0, 0));
         jPanel2.add(text2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 260, 20));
-        jPanel2.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 250, 30));
+        jPanel2.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 260, 30));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, 480, 520));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/authentication.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 10, 470, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 20, 470, -1));
 
         jLabel9.setBackground(new java.awt.Color(153, 255, 102));
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/backIcon.png"))); // NOI18N
+        jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel9MouseClicked(evt);
@@ -181,6 +184,7 @@ public class Authentication extends javax.swing.JFrame {
             if(temp == null)
             {
                 text2.setText("Date do not empty.");
+                  isValid = false;
             }
             else
             {
@@ -199,6 +203,7 @@ public class Authentication extends javax.swing.JFrame {
         
         if(isValid)
         {
+            JOptionPane.showMessageDialog(this," Authentication Successfully.");
             ForgotPass obj = new ForgotPass();
             this.hide();
             obj.setVisible(true);

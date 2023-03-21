@@ -175,7 +175,11 @@ public class Dashbord extends javax.swing.JFrame {
         custdet.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
         custdet.setForeground(new java.awt.Color(255, 255, 255));
         custdet.setText("Customer Detail");
+        custdet.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         custdet.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                custdetMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 custdetMouseEntered(evt);
             }
@@ -188,6 +192,7 @@ public class Dashbord extends javax.swing.JFrame {
         addcust.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
         addcust.setForeground(new java.awt.Color(255, 255, 255));
         addcust.setText("Add custumor");
+        addcust.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addcust.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 addcustMouseClicked(evt);
@@ -286,7 +291,11 @@ public class Dashbord extends javax.swing.JFrame {
         invdet.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
         invdet.setForeground(new java.awt.Color(255, 255, 255));
         invdet.setText("Invoice Detail");
+        invdet.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         invdet.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                invdetMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 invdetMouseEntered(evt);
             }
@@ -299,7 +308,11 @@ public class Dashbord extends javax.swing.JFrame {
         addinv.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
         addinv.setForeground(new java.awt.Color(255, 255, 255));
         addinv.setText("Add Invoice");
+        addinv.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addinv.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addinvMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 addinvMouseEntered(evt);
             }
@@ -325,6 +338,7 @@ public class Dashbord extends javax.swing.JFrame {
         addsup.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
         addsup.setForeground(new java.awt.Color(255, 255, 255));
         addsup.setText("Add Supplier");
+        addsup.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addsup.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 addsupMouseClicked(evt);
@@ -341,7 +355,11 @@ public class Dashbord extends javax.swing.JFrame {
         supdet.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
         supdet.setForeground(new java.awt.Color(255, 255, 255));
         supdet.setText(" Supplier Detail");
+        supdet.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         supdet.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                supdetMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 supdetMouseEntered(evt);
             }
@@ -367,7 +385,11 @@ public class Dashbord extends javax.swing.JFrame {
         accdet.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
         accdet.setForeground(new java.awt.Color(255, 255, 255));
         accdet.setText("Accesaries Detail");
+        accdet.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         accdet.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                accdetMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 accdetMouseEntered(evt);
             }
@@ -380,6 +402,7 @@ public class Dashbord extends javax.swing.JFrame {
         addacc.setFont(new java.awt.Font("Yu Gothic Medium", 1, 17)); // NOI18N
         addacc.setForeground(new java.awt.Color(255, 255, 255));
         addacc.setText("Add Accesaries");
+        addacc.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addacc.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 addaccMouseClicked(evt);
@@ -682,6 +705,36 @@ public class Dashbord extends javax.swing.JFrame {
         this.hide();
         ac.setVisible(true);
     }//GEN-LAST:event_addsupMouseClicked
+
+    private void custdetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_custdetMouseClicked
+        Customerdetails cu = new Customerdetails();
+        this.hide();
+        cu.setVisible(true);
+    }//GEN-LAST:event_custdetMouseClicked
+
+    private void supdetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_supdetMouseClicked
+        SupplierDetails cu = new SupplierDetails();
+        this.hide();
+        cu.setVisible(true);
+    }//GEN-LAST:event_supdetMouseClicked
+
+    private void addinvMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addinvMouseClicked
+        Invoice cu = new Invoice();
+        this.hide();
+        cu.setVisible(true);
+    }//GEN-LAST:event_addinvMouseClicked
+
+    private void invdetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_invdetMouseClicked
+        InvoiceDetail cu = new InvoiceDetail();
+        this.hide();
+        cu.setVisible(true);
+    }//GEN-LAST:event_invdetMouseClicked
+
+    private void accdetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accdetMouseClicked
+        AccessoriesDetails cu = new AccessoriesDetails();
+        this.hide();
+        cu.setVisible(true);
+    }//GEN-LAST:event_accdetMouseClicked
 
     /**
      * @param args the command line arguments
