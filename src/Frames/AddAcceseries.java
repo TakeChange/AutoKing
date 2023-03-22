@@ -66,6 +66,7 @@ public class AddAcceseries extends javax.swing.JFrame {
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 490, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/backIcon.png"))); // NOI18N
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel2MouseClicked(evt);
@@ -159,7 +160,7 @@ public class AddAcceseries extends javax.swing.JFrame {
                 acc7ActionPerformed(evt);
             }
         });
-        jPanel3.add(acc7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 520, 240, 30));
+        jPanel3.add(acc7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 460, 240, 30));
 
         acc2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         acc2.setCaretColor(new java.awt.Color(255, 102, 0));
@@ -174,6 +175,7 @@ public class AddAcceseries extends javax.swing.JFrame {
         Clear1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Clear1.setForeground(new java.awt.Color(255, 255, 255));
         Clear1.setText("CLEAR");
+        Clear1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Clear1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Clear1ActionPerformed(evt);
@@ -185,6 +187,7 @@ public class AddAcceseries extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("SUBMIT");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -212,7 +215,7 @@ public class AddAcceseries extends javax.swing.JFrame {
 
         text7.setForeground(new java.awt.Color(255, 0, 0));
         jPanel3.add(text7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 550, 240, 20));
-        jPanel3.add(acc6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 450, 240, 40));
+        jPanel3.add(acc6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 510, 240, 40));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 530, 640));
 
@@ -494,10 +497,9 @@ public class AddAcceseries extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        
         Dashbord obj = new Dashbord();
         this.hide();
-        obj.setVisible(true);
+        obj.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
