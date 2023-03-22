@@ -40,7 +40,7 @@ public signup() {
         clear = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
+        login = new javax.swing.JLabel();
         check = new javax.swing.JCheckBox();
         jLabel5 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -66,7 +66,7 @@ public signup() {
         showeye1 = new javax.swing.JLabel();
         hideeye = new javax.swing.JLabel();
         hideeye1 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
+        back = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -189,16 +189,16 @@ public signup() {
         jLabel17.setText("Already have an account ?");
         jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 700, -1, -1));
 
-        jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel18.setText("Login here");
-        jLabel18.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jLabel18.addMouseListener(new java.awt.event.MouseAdapter() {
+        login.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        login.setForeground(new java.awt.Color(51, 51, 255));
+        login.setText("Login here");
+        login.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        login.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel18MouseClicked(evt);
+                loginMouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 700, -1, -1));
+        jPanel2.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 700, -1, -1));
 
         check.setBackground(new java.awt.Color(255, 255, 255));
         check.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
@@ -329,14 +329,14 @@ public signup() {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, 560, 760));
 
-        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/backIcon.png"))); // NOI18N
-        jLabel20.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel20.addMouseListener(new java.awt.event.MouseAdapter() {
+        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/backIcon.png"))); // NOI18N
+        back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel20MouseClicked(evt);
+                backMouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 40, -1));
+        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 40, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/reg.png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -582,17 +582,18 @@ public signup() {
        
     }//GEN-LAST:event_confirmpassMouseClicked
 
-    private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
+    private void loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseClicked
         Login obj = new Login();
         this.hide();
         obj.setVisible(true);
-    }//GEN-LAST:event_jLabel18MouseClicked
+    }//GEN-LAST:event_loginMouseClicked
 
-    private void jLabel20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel20MouseClicked
-        Login obj = new Login();
+    private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
+        Login l1= new Login();
         this.hide();
-        obj.setVisible(true);
-    }//GEN-LAST:event_jLabel20MouseClicked
+        l1.setVisible(true);
+        
+    }//GEN-LAST:event_backMouseClicked
 
     private void showeyeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showeyeMousePressed
         // TODO add your handling code here:
@@ -659,6 +660,7 @@ public signup() {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField adhar;
+    private javax.swing.JLabel back;
     private javax.swing.JCheckBox check;
     private javax.swing.JButton clear;
     private javax.swing.JPasswordField confirmpass;
@@ -675,10 +677,8 @@ public signup() {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
@@ -690,6 +690,7 @@ public signup() {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel login;
     private javax.swing.JTextField mobile;
     private javax.swing.JPasswordField password;
     private javax.swing.JLabel showeye;
