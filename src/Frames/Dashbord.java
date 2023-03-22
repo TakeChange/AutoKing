@@ -32,7 +32,6 @@ public class Dashbord extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         invoice = new javax.swing.JLabel();
         Accesaries1 = new javax.swing.JLabel();
@@ -85,14 +84,11 @@ public class Dashbord extends javax.swing.JFrame {
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Dashbord image.png"))); // NOI18N
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, -1, -1));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Serif", 1, 48)); // NOI18N
         jLabel2.setText("AutoKing car care");
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 30, 450, -1));
-
-        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/backIcon.png"))); // NOI18N
-        jPanel3.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 40, -1));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 110));
 
@@ -487,7 +483,7 @@ public class Dashbord extends javax.swing.JFrame {
 
         jPanel1.add(panal8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 150, 80));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Dashbord icons/icons8-supplier.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-supplier.png"))); // NOI18N
         jLabel3.setMaximumSize(new java.awt.Dimension(40, 40));
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, -1, -1));
 
@@ -797,7 +793,6 @@ public class Dashbord extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

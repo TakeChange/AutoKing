@@ -11,6 +11,14 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.Date;
 import javax.swing.JOptionPane;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.PreparedStatement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class signup extends javax.swing.JFrame {
 public signup() {
@@ -362,9 +370,15 @@ public signup() {
         //muskan@123
         String strPattern = "^[a-zA-Z][a-zA-Z0-9_]{8,20}$";
         boolean isValid = true;
-        
+        Connection conn = null;
         String username1= username.getText();
-       
+        String Cdate;
+        Date temp = date.getDate();
+         String y = String.valueOf(temp.getYear()+1900);
+         String d = String.valueOf(temp.getDate());
+         String m = String.valueOf(temp.getMonth()+1);
+         Cdate = y+"-"+m+"-"+d;
+  
         if(username1.equals(""))
         {
             text1.setText("Username do not empty.");
@@ -386,7 +400,7 @@ public signup() {
     
         try
         {
-            Date temp = date.getDate();
+            temp = date.getDate();
             System.out.println("Date Format:"+temp);
             if(temp == null)
             {
@@ -395,11 +409,7 @@ public signup() {
             else
             {
                 dateError.setText("");
-                String y = String.valueOf(temp.getYear()+1900);
-                String d = String.valueOf(temp.getDate());
-                String m = String.valueOf(temp.getMonth()+1);
-                String Cdate = d+"/"+m+"/"+y;
-                 System.out.println("User Format:"+Cdate);
+               
             }
         }
         catch(Exception e)
@@ -518,10 +528,58 @@ public signup() {
                
          if(isValid)
         {
-            JOptionPane.showMessageDialog(this," Registration Successfully.");
-            Login obj = new Login();
-            this.hide();
-            obj.setVisible(true);
+           
+            try 
+            {
+                
+                System.out.println("Uesername :"+username1);
+                System.out.println("User Format:"+Cdate);
+                System.out.println("adharno:"+adhar1);
+                System.out.println("mobile:"+mobile1);
+                System.out.println("pass:"+upassword);
+                System.out.println("cpass:"+confpassword);
+                System.out.println("Connected to XAMPP MySQL database");
+                
+                ConnectionClass obj = new ConnectionClass();
+                conn = obj.getConnection();
+                
+                String q = "insert into signup(username,dateofbirth,adharno,mobileno,password,confirmpass) values(?,?,?,?,?,?)";
+                PreparedStatement st = conn.prepareStatement(q);
+                st.setString(1,username1);
+                st.setString(2,Cdate);
+                st.setString(3,adhar1);
+                st.setString(4,mobile1);
+                st.setString(5,upassword);
+                st.setString(6,confpassword);
+                
+                int op = st.executeUpdate();
+                
+               
+                
+                if(op>0)
+                {
+                    JOptionPane.showMessageDialog(this," Registration Successfully.");
+                    Login obj2 = new Login();
+                    this.hide();
+                    obj2.setVisible(true);
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(this," Registration Fail.");
+                }
+                conn.close();
+            } 
+            catch (Exception ex) 
+            {
+               System.out.println(ex);
+               JOptionPane.showMessageDialog(this,"This user allready exits.");
+               ex.printStackTrace();
+            }
+          
+            
+//            Login obj = new Login();
+//            this.hide();
+//            obj.setVisible(true);
             // Database connectivity queries
         }
         
