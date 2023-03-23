@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Frames;
-
+ 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemListener;
@@ -309,7 +309,7 @@ public signup() {
                 showeyeMousePressed(evt);
             }
         });
-        jPanel2.add(showeye, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 450, 20, -1));
+        jPanel2.add(showeye, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 480, 20, -1));
 
         showeye1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/eye1.png"))); // NOI18N
         showeye1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -372,13 +372,15 @@ public signup() {
         boolean isValid = true;
         Connection conn = null;
         String username1= username.getText();
-        String Cdate;
+        String Cdate ="";
         Date temp = date.getDate();
-         String y = String.valueOf(temp.getYear()+1900);
-         String d = String.valueOf(temp.getDate());
-         String m = String.valueOf(temp.getMonth()+1);
-         Cdate = y+"-"+m+"-"+d;
-  
+        if(temp!=null)
+        {
+            String y = String.valueOf(temp.getYear()+1900);
+            String d = String.valueOf(temp.getDate());
+            String m = String.valueOf(temp.getMonth()+1);
+            Cdate = y+"-"+m+"-"+d;
+        }
         if(username1.equals(""))
         {
             text1.setText("Username do not empty.");
@@ -465,18 +467,6 @@ public signup() {
             text4.setText("");
         }
     
-        ///This is for Password Field
-        /*
-            ^ represents starting character of the string.
-            (?=.*[0-9]) represents a digit must occur at least once.
-            (?=.*[a-z]) represents a lower case alphabet must occur at least once.
-            (?=.*[A-Z]) represents an upper case alphabet that must occur at least once.
-            (?=.*[@#$%^&-+=()] represents a special character that must occur at least once.
-            (?=\\S+$) white spaces don’t allowed in the entire string.
-            .{8, 20} represents at least 8 characters and at most 20 characters.
-            $ represents the end of the string.
-        */
-        
         String strpattern3="^(?=.*[0-9])"+ "(?=.*[a-z])(?=.*[A-Z])" + "(?=.*[@#$%^&+=])"+ "(?=\\S+$).{8,20}$";
         String upassword = password.getText();
         if(upassword.equals(""))
@@ -532,12 +522,6 @@ public signup() {
             try 
             {
                 
-                System.out.println("Uesername :"+username1);
-                System.out.println("User Format:"+Cdate);
-                System.out.println("adharno:"+adhar1);
-                System.out.println("mobile:"+mobile1);
-                System.out.println("pass:"+upassword);
-                System.out.println("cpass:"+confpassword);
                 System.out.println("Connected to XAMPP MySQL database");
                 
                 ConnectionClass obj = new ConnectionClass();

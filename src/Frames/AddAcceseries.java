@@ -6,17 +6,36 @@ package Frames;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.*;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class AddAcceseries extends javax.swing.JFrame {
-
+ 
+    Connection conn = null;
    
-    public AddAcceseries() {
+    public AddAcceseries() throws SQLException {
         initComponents();
+        addData();
     }
 
-    
+    public void addData() throws SQLException
+    {
+         ConnectionClass obj = new ConnectionClass();
+         conn = obj.getConnection();
+         
+         String q = "select *from supplier";
+         PreparedStatement st = conn.prepareStatement(q);
+         
+         ResultSet rs = st.executeQuery();
+         
+         while(rs.next())
+         {
+             acc7.addItem(rs.getString("sname"));
+         }  
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -40,7 +59,6 @@ public class AddAcceseries extends javax.swing.JFrame {
         acc1 = new javax.swing.JTextField();
         acc4 = new javax.swing.JTextField();
         acc5 = new javax.swing.JTextField();
-        acc7 = new javax.swing.JTextField();
         acc2 = new javax.swing.JTextField();
         Clear1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -52,6 +70,7 @@ public class AddAcceseries extends javax.swing.JFrame {
         text6 = new javax.swing.JLabel();
         text7 = new javax.swing.JLabel();
         acc6 = new com.toedter.calendar.JDateChooser();
+        acc7 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -153,15 +172,6 @@ public class AddAcceseries extends javax.swing.JFrame {
         });
         jPanel3.add(acc5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 400, 240, 30));
 
-        acc7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        acc7.setCaretColor(new java.awt.Color(255, 102, 0));
-        acc7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                acc7ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(acc7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 460, 240, 30));
-
         acc2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         acc2.setCaretColor(new java.awt.Color(255, 102, 0));
         acc2.addActionListener(new java.awt.event.ActionListener() {
@@ -215,7 +225,11 @@ public class AddAcceseries extends javax.swing.JFrame {
 
         text7.setForeground(new java.awt.Color(255, 0, 0));
         jPanel3.add(text7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 550, 240, 20));
-        jPanel3.add(acc6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 510, 240, 40));
+        jPanel3.add(acc6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 450, 240, 40));
+
+        acc7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "select" }));
+        acc7.setToolTipText("");
+        jPanel3.add(acc7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 520, 240, 30));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 530, 640));
 
@@ -237,10 +251,6 @@ public class AddAcceseries extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_acc5ActionPerformed
 
-    private void acc7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acc7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_acc7ActionPerformed
-
     private void acc2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acc2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_acc2ActionPerformed
@@ -253,7 +263,7 @@ public class AddAcceseries extends javax.swing.JFrame {
                     acc4.setText("");
                     acc5.setText("");
                     acc6.setCalendar(null);
-                    acc7.setText("");
+                    acc7.addItem("Select");
                 });        // TODO add your handling code here:
     }//GEN-LAST:event_Clear1ActionPerformed
 
@@ -343,10 +353,7 @@ public class AddAcceseries extends javax.swing.JFrame {
        
         
     }   */
-    
-    
-    
-    
+
     //For id Accesaries id 
         String str1="^([a-zA-Z_$][a-zA-Z\\d_$]*)$";
         boolean isValid = true;
@@ -366,8 +373,7 @@ public class AddAcceseries extends javax.swing.JFrame {
                 text1.setText("");
                 
             }
-        
-        
+
       //For id Accesaries name 
       
         String str2= "[a-zA-Z]+\\.?";
@@ -387,8 +393,7 @@ public class AddAcceseries extends javax.swing.JFrame {
                 text2.setText("");
                 
             }
-        
-        
+ 
         //For id Accesaries price 
         String str3="[0-9]+([,.][0-9]{1,2})?";
         String price= acc3.getText();
@@ -407,9 +412,7 @@ public class AddAcceseries extends javax.swing.JFrame {
                 text3.setText("");
                 
         }
-        
-        
-        
+
         //For id Accesaries Quantity
         String str4="^[0-9]*$";
         String quantity= acc4.getText();
@@ -429,9 +432,7 @@ public class AddAcceseries extends javax.swing.JFrame {
                 text4.setText("");
                 
         }
-        
-        
-        
+
         //For id company name
         String str5="[a-zA-Z]+\\.?";
         String cname= acc5.getText();
@@ -450,11 +451,7 @@ public class AddAcceseries extends javax.swing.JFrame {
                 text5.setText("");
                 
         }
-        
-        
-        
-        //For id Date
-       
+
        try
         {
             Date temp = acc6.getDate();
@@ -476,7 +473,8 @@ public class AddAcceseries extends javax.swing.JFrame {
         
         //For id custumer name
         String str7="[a-zA-Z]+\\.?";
-        String sname= acc7.getText();
+        String sname= acc7.getSelectedItem().toString();
+        System.out.println("supplier text:"+sname);
         if(sname.equals(""))
         {
             text7.setText(" Supplier name do not empty.");
@@ -489,11 +487,8 @@ public class AddAcceseries extends javax.swing.JFrame {
         }
         else
         {
-                text7.setText("");
-                
+                text7.setText("");  
         }
-        
-
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
@@ -533,7 +528,11 @@ public class AddAcceseries extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AddAcceseries().setVisible(true);
+                try {
+                    new AddAcceseries().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(AddAcceseries.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
@@ -546,7 +545,7 @@ public class AddAcceseries extends javax.swing.JFrame {
     private javax.swing.JTextField acc4;
     private javax.swing.JTextField acc5;
     private com.toedter.calendar.JDateChooser acc6;
-    private javax.swing.JTextField acc7;
+    private javax.swing.JComboBox<String> acc7;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel16;

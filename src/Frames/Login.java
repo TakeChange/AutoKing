@@ -158,7 +158,7 @@ public class Login extends javax.swing.JFrame {
         jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 450, -1, -1));
 
         passError.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel2.add(passError, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 260, 20));
+        jPanel2.add(passError, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 260, 20));
 
         userError.setForeground(new java.awt.Color(255, 0, 0));
         jPanel2.add(userError, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 260, 20));
@@ -222,7 +222,7 @@ public class Login extends javax.swing.JFrame {
         //boolean isValid=true;
         if(username.equals(""))
         {
-            userError.setText("username do not empty.");
+            userError.setText("Username do not empty.");
             isValid = false;
         }
         else
