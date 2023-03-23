@@ -5,16 +5,17 @@
         <group>
             <file>file:/C:/Users/vaish/Documents/NetBeansProjects/AutoKing/src/Frames/signup.java</file>
             <file>file:/C:/Users/vaish/Documents/NetBeansProjects/AutoKing/src/Frames/AccessoriesDetails.java</file>
-            <file>file:/C:/Users/vaish/Documents/NetBeansProjects/AutoKing/src/Frames/Login.java</file>
-            <file>file:/C:/Users/vaish/Documents/NetBeansProjects/AutoKing/src/Frames/Addcustomer.java</file>
             <file>file:/C:/Users/vaish/Documents/NetBeansProjects/AutoKing/src/Frames/SupplierDetails.java</file>
             <file>file:/C:/Users/vaish/Documents/NetBeansProjects/AutoKing/src/Frames/customerdetails.java</file>
             <file>file:/C:/Users/vaish/Documents/NetBeansProjects/AutoKing/src/Frames/Dashbord.java</file>
-            <file>file:/C:/Users/vaish/Documents/NetBeansProjects/AutoKing/src/Frames/AddAcceseries.java</file>
-            <file>file:/C:/Users/vaish/Documents/NetBeansProjects/AutoKing/src/Frames/AddSupplier.java</file>
             <file>file:/C:/Users/vaish/Documents/NetBeansProjects/AutoKing/src/Frames/Authentication.java</file>
             <file>file:/C:/Users/vaish/Documents/NetBeansProjects/AutoKing/src/Frames/Invoice.java</file>
             <file>file:/C:/Users/vaish/Documents/NetBeansProjects/AutoKing/src/Frames/InvoiceDetail.java</file>
+            <file>file:/C:/Users/vaish/Documents/NetBeansProjects/AutoKing/src/Frames/Login.java</file>
+            <file>file:/C:/Users/vaish/Documents/NetBeansProjects/AutoKing/src/Frames/Addcustomer.java</file>
+            <file>file:/C:/Users/vaish/Documents/NetBeansProjects/AutoKing/src/Frames/ConnectionClass.java</file>
+            <file>file:/C:/Users/vaish/Documents/NetBeansProjects/AutoKing/src/Frames/AddAcceseries.java</file>
+            <file>file:/C:/Users/vaish/Documents/NetBeansProjects/AutoKing/src/Frames/AddSupplier.java</file>
         </group>
     </open-files>
 </project-private>
