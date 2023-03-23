@@ -8,7 +8,10 @@ package Frames;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.Date;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -164,7 +167,7 @@ public class AddSupplier extends javax.swing.JFrame {
             }
         });
         jPanel2.add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 540, 120, -1));
-        jPanel2.add(sup6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, 120, -1));
+        jPanel2.add(sup6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, 140, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 580, 770));
 
@@ -194,6 +197,8 @@ public class AddSupplier extends javax.swing.JFrame {
         String strPattern = "^([a-zA-Z_$][a-zA-Z\\d_$]*)$";
           boolean isValid = true;
         String ID=sup1.getText();
+        String Cdate = "";
+        Connection conn = null;
         if(ID.equals(""))
         {
             SnoError.setText("Supplier id do not empty.");
@@ -275,12 +280,12 @@ public class AddSupplier extends javax.swing.JFrame {
             addError.setText("Address do not empty.");
             isValid = false;
         }
-               else
-               if(!Address.matches(strPattern4))
-              {
-              addError.setText("address is invalid");
-              isValid = false;
-              }
+//               else
+//               if(!Address.matches(strPattern4))
+//              {
+//              addError.setText("address is invalid");
+//              isValid = false;
+//              }
                else
                {
                    addError.setText("");
@@ -290,10 +295,19 @@ public class AddSupplier extends javax.swing.JFrame {
                try
         {
             Date temp = sup6.getDate();
-            System.out.println("Date Format:"+temp);
+            
+            if(temp!=null)
+            {
+                String y = String.valueOf(temp.getYear()+1900);
+                String d = String.valueOf(temp.getDate());
+                String m = String.valueOf(temp.getMonth()+1);
+                Cdate = y+"-"+m+"-"+d;
+            }
+            System.out.println("Date Format:"+Cdate);
             if(temp == null)
             {
                 dateError.setText("Date do not empty.");
+                isValid=false;
             }
             else
             {
@@ -304,6 +318,57 @@ public class AddSupplier extends javax.swing.JFrame {
         catch(Exception e)
         {
             System.out.println(e);
+        }
+               
+         if(isValid)
+        {
+           
+            try 
+            {
+                
+                System.out.println("Connected to XAMPP MySQL database");
+                System.out.println("id :"+ID);
+                System.out.println("date:"+Cdate);
+                System.out.println(""+Sname);
+                System.out.println(""+mobile);
+                System.out.println(""+email);
+                System.out.println(""+Address);
+                
+                
+                ConnectionClass obj = new ConnectionClass();
+                conn = obj.getConnection();
+                
+                String q = "insert into supplier(id,sdate,sname,smobile,emailid,address) values(?,?,?,?,?,?)";
+                PreparedStatement st = conn.prepareStatement(q);
+                st.setString(1,ID);
+                st.setString(2,Cdate);
+                st.setString(3,Sname);
+                st.setString(4,mobile);
+                st.setString(5,email);
+                st.setString(6,Address);
+                
+                int op = st.executeUpdate();
+           
+                if(op>0)
+                {
+                    JOptionPane.showMessageDialog(this," Supplier added successfully.");
+                    SupplierDetails obj2 = new SupplierDetails();
+                    this.hide();
+                    obj2.setVisible(true);
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(this,"This supplier allready exits.");
+                }
+                conn.close();
+            } 
+            catch (Exception ex) 
+            {
+               System.out.println(ex);
+               JOptionPane.showMessageDialog(this,"This supplier allready exits.");
+               ex.printStackTrace();
+            }
+        
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
