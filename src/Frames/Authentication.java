@@ -6,9 +6,40 @@ package Frames;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemListener;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.sql.PreparedStatement;
 import java.util.Date;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
+import java.sql.Statement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemListener;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.util.Date;
+import javax.swing.JOptionPane;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.PreparedStatement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
 
 /**
  *
@@ -155,9 +186,12 @@ public class Authentication extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        Connection conn = null;
+        
         String strpattern1="^[2-9]{1}[0-9]{3}\\s[0-9]{4}\\s[0-9]{4}$";
         boolean isValid=true;
         String adhar1= adhar.getText();
+        Date temp = date.getDate();
         
         if(adhar1.equals(""))
         {
@@ -173,13 +207,15 @@ public class Authentication extends javax.swing.JFrame {
         else
         {
             text1.setText("");
-        }
+        
         
         ////For Date
-        try
-        {
-            
-            Date temp = date.getDate();
+        //try
+        //{
+        } 
+            //Date temp = date.getDate();
+    
+               
             System.out.println("Date Format:"+temp);
             if(temp == null)
             {
@@ -189,25 +225,68 @@ public class Authentication extends javax.swing.JFrame {
             else
             {
                 text2.setText("");
-                String y = String.valueOf(temp.getYear()+1900);
-                String d = String.valueOf(temp.getDate());
-                String m = String.valueOf(temp.getMonth()+1);
-                String Cdate = d+"/"+m+"/"+y;
-                 System.out.println("User Format:"+Cdate);
+                 
             }
-        }
-        catch(Exception e)
-        {
-            System.out.println(e);
-        }
         
+        
+        String Cdate;
+        String y = String.valueOf(temp.getYear()+1900);
+        String d = String.valueOf(temp.getDate());
+        String m = String.valueOf(temp.getMonth()+1);
+        Cdate = y+"-"+m+"-"+d;     
         if(isValid)
         {
-            JOptionPane.showMessageDialog(this," Authentication Successfully.");
+
+              try
+               {
+                    System.out.println("User Format:"+date);
+                    System.out.println("adharno:"+adhar1);
+
+                    System.out.println("Connected to XAMPP MySQL database");
+
+                    ConnectionClass obj = new ConnectionClass();
+                    conn = obj.getConnection();
+
+                    String q = "insert into authentication(adharno,dateofbirth) values(?,?)";
+                    PreparedStatement st = conn.prepareStatement(q);
+
+                    st.setString(1,adhar1);
+                    st.setString(2,Cdate);
+                
+
+                    int op = st.executeUpdate();
+
+                     if(op>0)
+                    {
+                        JOptionPane.showMessageDialog(this," Authentication Successfully.");
+                        Login obj2 = new Login();
+                        this.hide();
+                        obj2.setVisible(true);
+                    }
+                    else
+                    {
+                        JOptionPane.showMessageDialog(this," Authentication Fail.");
+                    }
+                    conn.close();
+                }
+        
+       catch (Exception ex) 
+        {
+               System.out.println(ex);
+               //JOptionPane.showMessageDialog(this,"This user allready exits.");
+               ex.printStackTrace();
+        }
+          
+            
+
+                
+            
+           JOptionPane.showMessageDialog(this," Authentication Successfully.");
             ForgotPass obj = new ForgotPass();
             this.hide();
             obj.setVisible(true);
         }
+            
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed

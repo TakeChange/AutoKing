@@ -12,7 +12,7 @@ public class ConnectionClass
     {
         String url = "jdbc:mysql://localhost:3306/autoking";
         String username = "root"; // default username for XAMPP MySQL
-        String password = ""; // default password for XAMPP MySQL
+        String password = "pinki123"; // default password for XAMPP MySQL
         Connection conn = DriverManager.getConnection(url, username,password);
         return conn;
     }
