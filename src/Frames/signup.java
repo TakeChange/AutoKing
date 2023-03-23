@@ -6,14 +6,25 @@ package Frames;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.Date;
 import javax.swing.JOptionPane;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.PreparedStatement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class signup extends javax.swing.JFrame {
 public signup() {
         initComponents();
+        this.showeye.setVisible(false);
+        this.showeye1.setVisible(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -33,12 +44,12 @@ public signup() {
         jLabel11 = new javax.swing.JLabel();
         password = new javax.swing.JPasswordField();
         confirmpass = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        sign = new javax.swing.JButton();
         clear = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        login = new javax.swing.JLabel();
+        check = new javax.swing.JCheckBox();
         jLabel5 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -58,7 +69,12 @@ public signup() {
         adhar = new javax.swing.JTextField();
         text2 = new javax.swing.JLabel();
         date = new com.toedter.calendar.JDateChooser();
-        jLabel20 = new javax.swing.JLabel();
+        text7 = new javax.swing.JLabel();
+        showeye = new javax.swing.JLabel();
+        showeye1 = new javax.swing.JLabel();
+        hideeye = new javax.swing.JLabel();
+        hideeye1 = new javax.swing.JLabel();
+        back = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -81,11 +97,11 @@ public signup() {
         jLabel3.setForeground(new java.awt.Color(255, 153, 0));
         jLabel3.setText("Signup  Form");
         jLabel3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 260, 40));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 180, 40));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel4.setText("Please fill this form to create an account.");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 230, 30));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 230, 30));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         jLabel6.setText("Date of birth     :");
@@ -121,7 +137,7 @@ public signup() {
         jLabel11.setText("Confirm password :");
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 520, -1, 30));
 
-        password.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        password.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
         password.setCaretColor(new java.awt.Color(255, 102, 0));
         password.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -133,9 +149,9 @@ public signup() {
                 passwordActionPerformed(evt);
             }
         });
-        jPanel2.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, 280, 40));
+        jPanel2.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, 280, 40));
 
-        confirmpass.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        confirmpass.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
         confirmpass.setCaretColor(new java.awt.Color(255, 102, 0));
         confirmpass.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -147,23 +163,25 @@ public signup() {
                 confirmpassActionPerformed(evt);
             }
         });
-        jPanel2.add(confirmpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 520, 280, 40));
+        jPanel2.add(confirmpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 510, 280, 40));
 
-        jButton1.setBackground(new java.awt.Color(255, 165, 0));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("SIGNUP");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        sign.setBackground(new java.awt.Color(255, 165, 0));
+        sign.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        sign.setForeground(new java.awt.Color(255, 255, 255));
+        sign.setText("SIGNUP");
+        sign.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        sign.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                signActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 630, 120, -1));
+        jPanel2.add(sign, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 630, 120, -1));
 
         clear.setBackground(new java.awt.Color(255, 165, 0));
         clear.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         clear.setForeground(new java.awt.Color(255, 255, 255));
         clear.setText("CLEAR");
+        clear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearActionPerformed(evt);
@@ -179,41 +197,47 @@ public signup() {
         jLabel17.setText("Already have an account ?");
         jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 700, -1, -1));
 
-        jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel18.setText("Login here");
-        jLabel18.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 700, -1, -1));
-
-        jCheckBox1.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox1.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        jCheckBox1.setText("I accept the terms of use & privacy policy");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+        login.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        login.setForeground(new java.awt.Color(51, 51, 255));
+        login.setText("Login here");
+        login.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        login.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                loginMouseClicked(evt);
             }
         });
-        jPanel2.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 580, 380, -1));
+        jPanel2.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 700, -1, -1));
+
+        check.setBackground(new java.awt.Color(255, 255, 255));
+        check.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        check.setText("I accept the terms of use & privacy policy");
+        check.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        check.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkActionPerformed(evt);
+            }
+        });
+        jPanel2.add(check, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 570, 320, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 0, 0));
         jLabel5.setText("*");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, 20, -1));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 150, 20, -1));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 0, 0));
         jLabel9.setText("*");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 230, -1, -1));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 220, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 0, 0));
         jLabel12.setText("*");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 510, 30, 30));
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 490, 30, 30));
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 0, 0));
         jLabel13.setText("*");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 300, 20, -1));
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 280, 20, 40));
 
         mobile.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         mobile.setCaretColor(new java.awt.Color(255, 51, 0));
@@ -222,17 +246,17 @@ public signup() {
                 mobileMouseClicked(evt);
             }
         });
-        jPanel2.add(mobile, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 280, 40));
+        jPanel2.add(mobile, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 370, 280, 40));
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 0, 0));
         jLabel14.setText("*");
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 370, -1, -1));
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 360, -1, -1));
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 0, 0));
         jLabel15.setText("*");
-        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 440, -1, -1));
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, -1, -1));
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel19.setText("__________________________________________________________");
@@ -244,17 +268,17 @@ public signup() {
 
         text4.setForeground(new java.awt.Color(255, 0, 0));
         text4.setText("     ");
-        jPanel2.add(text4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 420, 280, 20));
+        jPanel2.add(text4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 410, 280, 20));
 
         text3.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel2.add(text3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, 280, 20));
+        jPanel2.add(text3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, 280, 20));
 
         text6.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel2.add(text6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 560, 280, 20));
+        jPanel2.add(text6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 550, 280, 20));
 
         text5.setForeground(new java.awt.Color(255, 0, 0));
         text5.setText("       ");
-        jPanel2.add(text5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, 270, 20));
+        jPanel2.add(text5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 480, 270, 20));
         jPanel2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 280, -1));
 
         dateError.setForeground(new java.awt.Color(255, 0, 0));
@@ -272,18 +296,59 @@ public signup() {
                 adharActionPerformed(evt);
             }
         });
-        jPanel2.add(adhar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 280, 40));
+        jPanel2.add(adhar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, 280, 40));
         jPanel2.add(text2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 280, 20));
-        jPanel2.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, 280, 40));
+        jPanel2.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 280, 40));
+
+        text7.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel2.add(text7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 590, 250, 20));
+
+        showeye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/eye1.png"))); // NOI18N
+        showeye.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                showeyeMousePressed(evt);
+            }
+        });
+        jPanel2.add(showeye, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 480, 20, -1));
+
+        showeye1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/eye1.png"))); // NOI18N
+        showeye1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                showeye1MousePressed(evt);
+            }
+        });
+        jPanel2.add(showeye1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 520, 20, -1));
+
+        hideeye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/hide1.png"))); // NOI18N
+        hideeye.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                hideeyeMousePressed(evt);
+            }
+        });
+        jPanel2.add(hideeye, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 450, 20, 20));
+
+        hideeye1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/hide1.png"))); // NOI18N
+        hideeye1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                hideeye1MousePressed(evt);
+            }
+        });
+        jPanel2.add(hideeye1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 520, 20, 20));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, 560, 760));
 
-        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/backIcon.png"))); // NOI18N
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 60, -1));
+        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/backIcon.png"))); // NOI18N
+        back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        back.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backMouseClicked(evt);
+            }
+        });
+        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 40, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/reg.png"))); // NOI18N
         jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 120, 410, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 100, 410, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 760));
 
@@ -299,15 +364,21 @@ public signup() {
         // TODO add your handling code here:
     }//GEN-LAST:event_confirmpassActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void signActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signActionPerformed
        
         ///This is for username
         //muskan@123
         String strPattern = "^[a-zA-Z][a-zA-Z0-9_]{8,20}$";
         boolean isValid = true;
-        
+        Connection conn = null;
         String username1= username.getText();
-       
+        String Cdate;
+        Date temp = date.getDate();
+         String y = String.valueOf(temp.getYear()+1900);
+         String d = String.valueOf(temp.getDate());
+         String m = String.valueOf(temp.getMonth()+1);
+         Cdate = y+"-"+m+"-"+d;
+  
         if(username1.equals(""))
         {
             text1.setText("Username do not empty.");
@@ -329,7 +400,7 @@ public signup() {
     
         try
         {
-            Date temp = date.getDate();
+            temp = date.getDate();
             System.out.println("Date Format:"+temp);
             if(temp == null)
             {
@@ -338,11 +409,7 @@ public signup() {
             else
             {
                 dateError.setText("");
-                String y = String.valueOf(temp.getYear()+1900);
-                String d = String.valueOf(temp.getDate());
-                String m = String.valueOf(temp.getMonth()+1);
-                String Cdate = d+"/"+m+"/"+y;
-                 System.out.println("User Format:"+Cdate);
+               
             }
         }
         catch(Exception e)
@@ -358,15 +425,15 @@ public signup() {
         
         if(adhar1.equals(""))
         {
-            text3.setText("Aadhar no do not empty.");
+            text3.setText(" Aadhar no do not empty.");
             isValid = false;
         }
         else
         if(!adhar1.matches(strpattern1))
         {
-            text3.setText("Aadhar number is invalid.");
+            text3.setText(" Aadhar number is invalid.");
             isValid = false;
-         }
+        }
         else
         {
             text3.setText("");
@@ -384,13 +451,13 @@ public signup() {
         //String strpattern2=("^(\\+\\d{1,3}()?)?(\\d{3}[]?){2}\\d{3}$");
         if(mobile1.equals(""))
         {
-            text4.setText("Mobile no do not empty.");
+            text4.setText(" Mobile no do not empty.");
             isValid = false;
         }
         else
         if(!mobile1.matches(strpattern2))
         {
-            text4.setText("Mobile number is invalid.");
+            text4.setText(" Mobile number is invalid.");
             isValid = false;
          }
         else
@@ -414,7 +481,7 @@ public signup() {
         String upassword = password.getText();
         if(upassword.equals(""))
         {
-            text5.setText("Password do not empty.");
+            text5.setText(" Password do not empty.");
             isValid = false;
         }
         else
@@ -424,7 +491,7 @@ public signup() {
         }
         else
         {
-            text5.setText("Enter valid password");
+            text5.setText(" Enter valid password");
              isValid = false;
         }
         
@@ -442,23 +509,85 @@ public signup() {
         }
         else
         {
-            text6.setText("Password do not Match Enter above Password");
+            text6.setText(" Password do not Match Enter above Password");
             isValid = false;
         }
+       
+       
+        if(check.isSelected())
+        {
+             text7.setText("");
+        }
+        else
+        {
+             text7.setText(" Accept the term and condition");
+            isValid = false;
+        }
+       
+  
+               
          if(isValid)
         {
-            JOptionPane.showMessageDialog(this,"Registration Successfully.");
-            Login obj = new Login();
-            this.hide();
-            obj.setVisible(true);
+           
+            try 
+            {
+                
+                System.out.println("Uesername :"+username1);
+                System.out.println("User Format:"+Cdate);
+                System.out.println("adharno:"+adhar1);
+                System.out.println("mobile:"+mobile1);
+                System.out.println("pass:"+upassword);
+                System.out.println("cpass:"+confpassword);
+                System.out.println("Connected to XAMPP MySQL database");
+                
+                ConnectionClass obj = new ConnectionClass();
+                conn = obj.getConnection();
+                
+                String q = "insert into signup(username,dateofbirth,adharno,mobileno,password,confirmpass) values(?,?,?,?,?,?)";
+                PreparedStatement st = conn.prepareStatement(q);
+                st.setString(1,username1);
+                st.setString(2,Cdate);
+                st.setString(3,adhar1);
+                st.setString(4,mobile1);
+                st.setString(5,upassword);
+                st.setString(6,confpassword);
+                
+                int op = st.executeUpdate();
+                
+               
+                
+                if(op>0)
+                {
+                    JOptionPane.showMessageDialog(this," Registration Successfully.");
+                    Login obj2 = new Login();
+                    this.hide();
+                    obj2.setVisible(true);
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(this," Registration Fail.");
+                }
+                conn.close();
+            } 
+            catch (Exception ex) 
+            {
+               System.out.println(ex);
+               JOptionPane.showMessageDialog(this,"This user allready exits.");
+               ex.printStackTrace();
+            }
+          
+            
+//            Login obj = new Login();
+//            this.hide();
+//            obj.setVisible(true);
             // Database connectivity queries
         }
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_signActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    private void checkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkActionPerformed
+    
+    }//GEN-LAST:event_checkActionPerformed
 
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
         /// To clear All data in in textfield
@@ -484,37 +613,73 @@ public signup() {
     }//GEN-LAST:event_passwordActionPerformed
 
     private void usernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usernameMouseClicked
-        // TODO add your handling code here:
-        text1.setText("");
+      
         
     }//GEN-LAST:event_usernameMouseClicked
 
     private void dateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dateMouseClicked
        
-            dateError.setText(" ");
+            
             
            
     }//GEN-LAST:event_dateMouseClicked
 
     private void adharMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adharMouseClicked
-        // TODO add your handling code here:
-          text3.setText("");
+       
     }//GEN-LAST:event_adharMouseClicked
 
     private void mobileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mobileMouseClicked
-        // TODO add your handling code here:
-          text4.setText("");
+    
     }//GEN-LAST:event_mobileMouseClicked
 
     private void passwordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passwordMouseClicked
-        // TODO add your handling code here:
-          text5.setText("");
+      
     }//GEN-LAST:event_passwordMouseClicked
 
     private void confirmpassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmpassMouseClicked
-        // TODO add your handling code here:
-          text6.setText("");
+       
     }//GEN-LAST:event_confirmpassMouseClicked
+
+    private void loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseClicked
+        Login obj = new Login();
+        this.hide();
+        obj.setVisible(true);
+    }//GEN-LAST:event_loginMouseClicked
+
+    private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
+        Login l1= new Login();
+        this.hide();
+        l1.setVisible(true);
+        
+    }//GEN-LAST:event_backMouseClicked
+
+    private void showeyeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showeyeMousePressed
+        // TODO add your handling code here:
+        password.setEchoChar('*');
+        showeye.setVisible(false);
+        hideeye.setVisible(true);
+    }//GEN-LAST:event_showeyeMousePressed
+
+    private void showeye1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showeye1MousePressed
+        // TODO add your handling code here:
+        confirmpass.setEchoChar('*');
+        showeye1.setVisible(false);
+        hideeye1.setVisible(true);
+    }//GEN-LAST:event_showeye1MousePressed
+
+    private void hideeyeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hideeyeMousePressed
+        // TODO add your handling code here:
+        password.setEchoChar((char)0);
+        showeye.setVisible(true);
+        hideeye.setVisible(false);
+    }//GEN-LAST:event_hideeyeMousePressed
+
+    private void hideeye1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hideeye1MousePressed
+        // TODO add your handling code here:
+        confirmpass.setEchoChar((char)0);
+        showeye1.setVisible(true);
+        hideeye1.setVisible(false);
+    }//GEN-LAST:event_hideeye1MousePressed
 
     /**
      * @param args the command line arguments
@@ -553,12 +718,14 @@ public signup() {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField adhar;
+    private javax.swing.JLabel back;
+    private javax.swing.JCheckBox check;
     private javax.swing.JButton clear;
     private javax.swing.JPasswordField confirmpass;
     private com.toedter.calendar.JDateChooser date;
     private javax.swing.JLabel dateError;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JLabel hideeye;
+    private javax.swing.JLabel hideeye1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -568,10 +735,8 @@ public signup() {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
@@ -583,14 +748,19 @@ public signup() {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel login;
     private javax.swing.JTextField mobile;
     private javax.swing.JPasswordField password;
+    private javax.swing.JLabel showeye;
+    private javax.swing.JLabel showeye1;
+    private javax.swing.JButton sign;
     private javax.swing.JLabel text1;
     private javax.swing.JLabel text2;
     private javax.swing.JLabel text3;
     private javax.swing.JLabel text4;
     private javax.swing.JLabel text5;
     private javax.swing.JLabel text6;
+    private javax.swing.JLabel text7;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }
