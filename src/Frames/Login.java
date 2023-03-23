@@ -17,8 +17,8 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -46,7 +46,6 @@ public class Login extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         passError = new javax.swing.JLabel();
         userError = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -164,9 +163,6 @@ public class Login extends javax.swing.JFrame {
         userError.setForeground(new java.awt.Color(255, 0, 0));
         jPanel2.add(userError, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 260, 20));
 
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/hide1.png"))); // NOI18N
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, -1, -1));
-
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, 530, 510));
 
         jPanel3.setBackground(new java.awt.Color(255, 165, 0));
@@ -226,7 +222,7 @@ public class Login extends javax.swing.JFrame {
         //boolean isValid=true;
         if(username.equals(""))
         {
-            userError.setText("username do not empty.");
+            userError.setText("Username do not empty.");
             isValid = false;
         }
         else
@@ -278,6 +274,7 @@ public class Login extends javax.swing.JFrame {
 //        {
 //           JOptionPane.showMessageDialog(this,"Please Enter UserName....."); 
 //        }
+    
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void b2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b2ActionPerformed
@@ -357,7 +354,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
