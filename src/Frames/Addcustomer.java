@@ -5,7 +5,10 @@
 package Frames;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.Date;
+import javax.swing.JOptionPane;
 /**
  *
  * @author vaish
@@ -209,11 +212,22 @@ public class Addcustomer extends javax.swing.JFrame {
     private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
         // TODO add your handling code here:
         boolean isValid = true;
+        Connection conn = null;
+       
+        String Cdate ="";
+        Date temp = cust6.getDate();
+        if(temp!=null)
+        {
+            String y = String.valueOf(temp.getYear()+1900);
+            String d = String.valueOf(temp.getDate());
+            String m = String.valueOf(temp.getMonth()+1);
+            Cdate = y+"-"+m+"-"+d;
+        }
         
 
 
-          String strpattern1="^([a-zA-Z_$][a-zA-Z\\d_$]*)$";
-         String id= cust1.getText();
+        String strpattern1="^([a-zA-Z_$][a-zA-Z\\d_$]*)$";
+        String id= cust1.getText();
         
         //For id Customer id 
         if(id.equals(""))
@@ -294,7 +308,7 @@ public class Addcustomer extends javax.swing.JFrame {
         
         
         //For id Customer Address
-        String strpattern5=("\\d+\\s+([a-zA-Z]+|[a-zA-Z]+\\s[a-zA-Z]+)");
+        String strpattern5="^([a-zA-Z._]+\\.?)";
         String address= cust5.getText();
         if(address.equals(""))
         {
@@ -315,7 +329,7 @@ public class Addcustomer extends javax.swing.JFrame {
       
        try
         {
-            Date temp = cust6.getDate();
+            //Date temp = cust6.getDate();
             System.out.println("Date Format:"+temp);
            if(temp == null)
            {
@@ -332,6 +346,58 @@ public class Addcustomer extends javax.swing.JFrame {
            System.out.println(e);
        }
         
+        
+       
+       
+        if(isValid)
+        {
+           
+            try 
+            {
+                
+                //System.out.println("Connected to XAMPP MySQL database");
+                
+                ConnectionClass obj = new ConnectionClass();
+                conn = obj.getConnection();
+                
+                System.out.println("Connected to XAMPP MySQL database");
+                
+                String q = "insert into addcustomer(cust_id,cust_name,cust_mobile,cust_email,cust_address,date) values(?,?,?,?,?,?)";
+                PreparedStatement st = conn.prepareStatement(q);
+                st.setString(1,id);
+                st.setString(2,name);
+                st.setString(3,mobile);
+                st.setString(4,email);
+                st.setString(5,address);
+                st.setString(6,Cdate);
+                
+                int op = st.executeUpdate();
+                
+               
+                
+                if(op>0)
+                {
+                    JOptionPane.showMessageDialog(this," Supplier Added Successfully.");
+                    Dashbord obj2 = new Dashbord();
+                    this.hide();
+                    obj2.setVisible(true);
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(this,"Supplier Added Fail.");
+                }
+                conn.close();
+            } 
+            catch (Exception ex) 
+            {
+               System.out.println(ex);
+               JOptionPane.showMessageDialog(this,"This user allready exits.");
+               ex.printStackTrace();
+            }
+          
+            
+
+        }
         
         
     }//GEN-LAST:event_saveActionPerformed

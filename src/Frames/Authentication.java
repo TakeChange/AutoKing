@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package Frames;
 
 import java.awt.event.ActionEvent;
@@ -23,28 +20,10 @@ import java.util.logging.Logger;
 
 
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemListener;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
-import java.util.Date;
-import javax.swing.JOptionPane;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.PreparedStatement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 
 
-/**
- *
- * @author acer
- */
+
 public class Authentication extends javax.swing.JFrame {
 
     /**
@@ -259,7 +238,7 @@ public class Authentication extends javax.swing.JFrame {
                      if(op>0)
                     {
                         JOptionPane.showMessageDialog(this," Authentication Successfully.");
-                        Login obj2 = new Login();
+                        ForgotPass obj2 = new ForgotPass();
                         this.hide();
                         obj2.setVisible(true);
                     }
@@ -273,18 +252,14 @@ public class Authentication extends javax.swing.JFrame {
        catch (Exception ex) 
         {
                System.out.println(ex);
-               //JOptionPane.showMessageDialog(this,"This user allready exits.");
+               JOptionPane.showMessageDialog(this,"This user allready exits.");
                ex.printStackTrace();
         }
           
             
 
                 
-            
-           JOptionPane.showMessageDialog(this," Authentication Successfully.");
-            ForgotPass obj = new ForgotPass();
-            this.hide();
-            obj.setVisible(true);
+    
         }
             
     }//GEN-LAST:event_jButton1ActionPerformed
