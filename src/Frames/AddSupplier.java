@@ -273,7 +273,7 @@ public class AddSupplier extends javax.swing.JFrame {
             
             
             //Address
-            String strPattern4=("\"^(\\\\d{1,}) [a-zA-Z0-9\\\\s]+(\\\\,)? [a-zA-Z]+(\\\\,)? [A-Z]{2} [0-9]{5,6}$\"");
+            String strPattern4="[a-z . A-Z-0-9._]+\\.?";
             String Address=sup5.getText();
                if(Address.equals(""))
         {
