@@ -6,7 +6,22 @@ package Frames;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
+import java.awt.event.ItemListener;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.util.Date;
+import javax.swing.JDialog;
+import java.sql.Statement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
 
 
 /**
@@ -176,6 +191,7 @@ public class ForgotPass extends javax.swing.JFrame {
 
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
     
+        
          clear.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -190,6 +206,7 @@ public class ForgotPass extends javax.swing.JFrame {
         Authentication obj = new Authentication();
         this.hide();
         obj.setVisible(true);
+        
 
         //        JOptionPane.showMessageDialog(this, "Enter a valid Number","ERROR", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_jLabel13MouseClicked
@@ -207,6 +224,7 @@ public class ForgotPass extends javax.swing.JFrame {
 
     private void save1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_save1ActionPerformed
         // TODO add your handling code here:
+        Connection conn = null;
          String strpattern3="^(?=.*[0-9])"+ "(?=.*[a-z])(?=.*[A-Z])" + "(?=.*[@#$%^&+=])"+ "(?=\\S+$).{8,20}$";
         String upassword = t1.getText();
         boolean isValid=true;
@@ -243,7 +261,51 @@ public class ForgotPass extends javax.swing.JFrame {
             text2.setText("Password do not Match Enter above Password");
             isValid = false;
         }
+         if(isValid)
+        {
+
+         try
+               {
+                    System.out.println("new password:"+upassword);
+                    System.out.println("confirm password:"+confpassword);
+
+                    System.out.println("Connected to XAMPP MySQL database");
+
+                    ConnectionClass obj = new ConnectionClass();
+                    conn = obj.getConnection();
+
+                    String q = "insert into forgotpass(newpassword,confpassword) values(?,?)";
+                    PreparedStatement st = conn.prepareStatement(q);
+
+                    st.setString(1,upassword);
+                    st.setString(2,confpassword);
+                
+
+                    int op = st.executeUpdate();
+
+                     if(op>0)
+                    {
+                        JOptionPane.showMessageDialog(this," password changed Successfully.");
+                        ForgotPass obj2 = new ForgotPass();
+                        this.hide();
+                        obj2.setVisible(true);
+                    }
+                    else
+                    {
+                        JOptionPane.showMessageDialog(this," password changed Fail.");
+                    }
+                    conn.close();
+                }
         
+       catch (Exception ex) 
+        {
+               System.out.println(ex);
+               JOptionPane.showMessageDialog(this,"This user allready exits.");
+               ex.printStackTrace();
+        }
+          
+        }    
+       
         if(isValid)
         {
             Login obj = new Login();
