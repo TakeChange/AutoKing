@@ -522,10 +522,12 @@ public signup() {
             try 
             {
                 
-                System.out.println("Connected to XAMPP MySQL database");
+                //System.out.println("Connected to XAMPP MySQL database");
                 
                 ConnectionClass obj = new ConnectionClass();
                 conn = obj.getConnection();
+                
+                System.out.println("Connected to XAMPP MySQL database");
                 
                 String q = "insert into signup(username,dateofbirth,adharno,mobileno,password,confirmpass) values(?,?,?,?,?,?)";
                 PreparedStatement st = conn.prepareStatement(q);
@@ -561,10 +563,7 @@ public signup() {
             }
           
             
-//            Login obj = new Login();
-//            this.hide();
-//            obj.setVisible(true);
-            // Database connectivity queries
+
         }
         
     }//GEN-LAST:event_signActionPerformed

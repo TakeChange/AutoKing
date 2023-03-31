@@ -10,6 +10,7 @@ import java.sql.*;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 
 public class AddAcceseries extends javax.swing.JFrame {
@@ -268,92 +269,7 @@ public class AddAcceseries extends javax.swing.JFrame {
     }//GEN-LAST:event_Clear1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        
-    /*    String id= acc1.getText();
-        
-        //For id Accesaries id 
-        
-        if(id.equals(""))
-        {
-            text1.setText("Accesaries id do not empty.");
-        }
-        else
-        if(!id.matches(str1))
-        {
-            text1.setText("  Accesaries id is invalid.");
-            isValid = false;
-         }
-        else
-            {
-                text1.setText("");
-                
-            }
-        
-        
-        
-        
-        //For id Accesaries name 
-        String name= acc2.getText();
-        if(name.equals(""))
-        {
-            text2.setText("Accesaries name do not empty.");
-        }
-        
-        //For id Accesaries price 
-        String price= acc3.getText();
-        if(price.equals(""))
-        {
-            text3.setText("Accesaries price do not empty.");
-        }
-        
-        //For id Accesaries Quantity
-        String quantity= acc4.getText();
-        if(quantity.equals(""))
-        {
-            text4.setText("Accesaries Quantity do not empty.");
-        }
-        
-        //For id company name
-        String cname= acc5.getText();
-        if(cname.equals(""))
-        {
-            text5.setText("company name do not empty.");
-        }
-        
-        //For id Date
-       
-       try
-        {
-            Date temp = acc6.getDate();
-            System.out.println("Date Format:"+temp);
-            if(temp == null)
-            {
-                text6.setText("Date do not empty.");
-            }
-            else
-            {
-                text6.setText("");
-                
-            }
-        }
-        catch(Exception e)
-        {
-            System.out.println(e);
-        }
-        
-        //For id custumer name
-        String sname= acc7.getText();
-        if(sname.equals(""))
-        {
-            text7.setText("custumer name do not empty.");
-        }
-        
-        //For id Accesaries id 
-       
-        
-    }   */
-
+      
     //For id Accesaries id 
         String str1="^([a-zA-Z_$][a-zA-Z\\d_$]*)$";
         boolean isValid = true;
@@ -441,20 +357,31 @@ public class AddAcceseries extends javax.swing.JFrame {
             text5.setText(" Company name do not empty.");
         }
         else
-        if(!cname.matches(str5))
-        {
-            text5.setText(" Company name is invalid.");
-            isValid = false;
-        }
-        else
+//        if(!cname.matches(str5))
+//        {
+//            text5.setText(" Company name is invalid.");
+//            isValid = false;
+//        }
+//        else
         {
                 text5.setText("");
                 
         }
+        
+        
+        String Cdate ="";
+        Date temp = acc6.getDate();
+        if(temp!=null)
+        {
+            String y = String.valueOf(temp.getYear()+1900);
+            String d = String.valueOf(temp.getDate());
+            String m = String.valueOf(temp.getMonth()+1);
+            Cdate = y+"-"+m+"-"+d;
+        }
 
        try
         {
-            Date temp = acc6.getDate();
+            //Date temp = acc6.getDate();
             System.out.println("Date Format:"+temp);
             if(temp == null)
             {
@@ -489,12 +416,78 @@ public class AddAcceseries extends javax.swing.JFrame {
         {
                 text7.setText("");  
         }
+        
+        
+        //
+        if(isValid)
+        {
+           
+            try 
+            {
+                
+                //System.out.println("Connected to XAMPP MySQL database");
+                
+                ConnectionClass obj = new ConnectionClass();
+                conn = obj.getConnection();
+                
+                System.out.println("Connected to XAMPP MySQL database");
+                
+                String q = "insert into addaccessories(product_id,acce_name,acce_price,acce_quantity,acce_comp_name,acce_issue_date,supplier_name) values(?,?,?,?,?,?,?)";
+                PreparedStatement st = conn.prepareStatement(q);
+                st.setString(1,id);
+                st.setString(2,name);
+                st.setString(3,price);
+                st.setString(4,quantity);
+                st.setString(5,cname);
+                st.setString(6,Cdate);
+                st.setString(7,sname);
+                
+                int op = st.executeUpdate();
+                
+               
+                
+                if(op>0)
+                {
+                    JOptionPane.showMessageDialog(this," Registration Successfully.");
+                        Dashbord d = new Dashbord();
+                        this.hide();
+                        d.setVisible(true);  
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(this," Registration Fail.");
+                }
+                conn.close();
+            } 
+            catch (Exception ex) 
+            {
+               System.out.println(ex);
+               JOptionPane.showMessageDialog(this,"This user allready exits.");
+               ex.printStackTrace();
+            }
+          
+            
+
+        }
+        
+                                        
+        
+        //
+        
+        
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        Dashbord obj = new Dashbord();
-        this.hide();
-        obj.setVisible(true);        // TODO add your handling code here:
+        Dashbord obj;
+        try {
+            obj = new Dashbord();
+             this.hide();
+        obj.setVisible(true); 
+        } catch (SQLException ex) {
+            Logger.getLogger(AddAcceseries.class.getName()).log(Level.SEVERE, null, ex);
+        }
+              // TODO add your handling code here:
     }//GEN-LAST:event_jLabel2MouseClicked
 
     /**

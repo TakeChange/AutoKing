@@ -5,6 +5,9 @@
  */
 package Frames;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -170,9 +173,15 @@ public class InvoiceDetail extends javax.swing.JFrame {
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         // TODO add your handling code here:
-         Dashbord obj = new Dashbord();
+         Dashbord obj;
+        try {
+            obj = new Dashbord();
             this.hide();
             obj.setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(InvoiceDetail.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
     }//GEN-LAST:event_jLabel2MouseClicked
 
     /**

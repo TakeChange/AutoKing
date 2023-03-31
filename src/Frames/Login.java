@@ -1,20 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package Frames;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author Pritish
+ * @author Anuja
  */
 public class Login extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Login
-     */
+
     public Login() {
         initComponents();
         
@@ -192,32 +189,8 @@ public class Login extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String strPattern = "^[a-zA-Z0-9_.]{8,20}$";
         boolean isValid = true;
-        
-        // String username=t1.getText();
-
-        //String upassword = t2.getText();
-       
-            
-        /*if(!username.matches(strPattern)){
-            userError.setText("Username is invalid.");
-            isValid = false;
-         }
-        else
-        {
-            userError.setText("");
-        }
-        
-        if(upassword.equals(""))
-        {
-            passError.setText("Password do not empty.");
-            isValid = false;
-        }
-        else
-        {
-            passError.setText("");
-        }*/
-        
-        
+        Connection conn = null;
+           
         String username = t1.getText();
         //boolean isValid=true;
         if(username.equals(""))
@@ -226,7 +199,7 @@ public class Login extends javax.swing.JFrame {
             isValid = false;
         }
         else
-        if(!username.matches( strPattern ))
+        if(!username.matches( strPattern))
         {
             userError.setText("Enter valid username");
             isValid = false;
@@ -258,22 +231,50 @@ public class Login extends javax.swing.JFrame {
             passError.setText("");
             // isValid = false;
         }
-        
         if(isValid)
         {
-            JOptionPane.showMessageDialog(this,"Login Successfully.");
-            Dashbord obj = new Dashbord();
-            this.hide();
-            obj.setVisible(true);
-            // Database connectivity queries
+        try 
+            {
+                
+                //System.out.println("Connected to XAMPP MySQL database");
+                
+                ConnectionClass obj = new ConnectionClass();
+                conn = obj.getConnection();
+                
+                System.out.println("Connected to XAMPP MySQL database");
+                
+                String q = "insert into login(username,password) values(?,?)";
+                PreparedStatement st = conn.prepareStatement(q);
+                st.setString(1,username);
+                st.setString(2,password);
+                
+                
+                int op = st.executeUpdate();
+                
+               
+                
+                if(op>0)
+                {
+                    JOptionPane.showMessageDialog(this," login Successfully.");
+                    Dashbord obj2 = new Dashbord();
+                    this.hide();
+                    obj2.setVisible(true);
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(this," login Fail.");
+                }
+                conn.close();
+            } 
+            catch (Exception ex) 
+            {
+               System.out.println(ex);
+               JOptionPane.showMessageDialog(this,"This user allready exits.");
+               ex.printStackTrace();
+            }
         }
-//        else if(!(username.equals(""))&&upassword.equals("")){
-//            JOptionPane.showMessageDialog(this,"Please Enter Password.....");
-//        }
-//        else if(username.equals("")&&!(upassword.equals("")))
-//        {
-//           JOptionPane.showMessageDialog(this,"Please Enter UserName....."); 
-//        }
+          
+
     
     }//GEN-LAST:event_jButton1ActionPerformed
 
