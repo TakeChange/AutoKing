@@ -232,6 +232,9 @@ public class Login extends javax.swing.JFrame {
             // isValid = false;
         }
         
+        
+        if(isValid)
+        {
         try 
             {
                 
@@ -271,7 +274,7 @@ public class Login extends javax.swing.JFrame {
                JOptionPane.showMessageDialog(this,"This user allready exits.");
                ex.printStackTrace();
             }
-          
+        }
 
     
     }//GEN-LAST:event_jButton1ActionPerformed

@@ -348,7 +348,7 @@ public signup() {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/reg.png"))); // NOI18N
         jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 100, 410, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, 60, 410, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 760));
 
@@ -637,7 +637,7 @@ public signup() {
     }//GEN-LAST:event_backMouseClicked
 
     private void showeyeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showeyeMousePressed
-        // TODO add your handling code here:
+        
         password.setEchoChar('*');
         showeye.setVisible(false);
         hideeye.setVisible(true);
