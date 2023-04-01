@@ -231,6 +231,8 @@ public class Login extends javax.swing.JFrame {
             passError.setText("");
             // isValid = false;
         }
+        
+        
         if(isValid)
         {
         try 

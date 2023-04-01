@@ -247,7 +247,7 @@ public class Addcustomer extends javax.swing.JFrame {
             t1.setText("");
         }
         //For id Customer name 
-        String strpattern2="^([a-zA-Z]+\\.?)";
+        String strpattern2="^([a-z A-Z]+\\.?)";
         String name= cust2.getText();
         if(name.equals(""))
         {
@@ -308,7 +308,7 @@ public class Addcustomer extends javax.swing.JFrame {
         
         
         //For id Customer Address
-        String strpattern5="^([a-zA-Z._]+\\.?)";
+        String strpattern5="^([a-z . A-Z-0-9._]+\\.?)";
         String address= cust5.getText();
         if(address.equals(""))
         {

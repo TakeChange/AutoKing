@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -5,7 +6,16 @@
  */
 package Frames;
 
+
+import java.lang.System.Logger.Level;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import javax.swing.JOptionPane;
+import java.sql.Statement;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.table.DefaultTableModel;
+
 
 /**
  *
@@ -19,7 +29,7 @@ public class InvoiceDetail extends javax.swing.JFrame {
     public InvoiceDetail() {
         initComponents();
     }
-
+    Connection conn;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -34,12 +44,13 @@ public class InvoiceDetail extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         search = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        update = new javax.swing.JButton();
-        save = new javax.swing.JButton();
+        table = new javax.swing.JTable();
+        show = new javax.swing.JButton();
         delete = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        save1 = new javax.swing.JButton();
+        update1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 102, 102));
@@ -73,9 +84,9 @@ public class InvoiceDetail extends javax.swing.JFrame {
         });
         jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 80, 120, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
+                {"", null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -84,34 +95,23 @@ public class InvoiceDetail extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "invoice_no", "item_no", "item_name", "quantity", "unit_price", "subtotal"
+                "Invoiceno", "Itemno", "itemname", "quantity", "Price", "Amount"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(table);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 950, 390));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 950, 390));
 
-        update.setBackground(new java.awt.Color(0, 153, 153));
-        update.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        update.setForeground(new java.awt.Color(255, 255, 255));
-        update.setText("UPDATE");
-        update.addActionListener(new java.awt.event.ActionListener() {
+        show.setBackground(new java.awt.Color(0, 153, 153));
+        show.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        show.setForeground(new java.awt.Color(255, 255, 255));
+        show.setText("SHOW");
+        show.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateActionPerformed(evt);
+                showActionPerformed(evt);
             }
         });
-        jPanel1.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 540, 120, -1));
-
-        save.setBackground(new java.awt.Color(0, 153, 153));
-        save.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        save.setForeground(new java.awt.Color(255, 255, 255));
-        save.setText("SAVE");
-        save.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saveActionPerformed(evt);
-            }
-        });
-        jPanel1.add(save, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 540, 120, -1));
+        jPanel1.add(show, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 540, 120, -1));
 
         delete.setBackground(new java.awt.Color(0, 153, 153));
         delete.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -122,7 +122,7 @@ public class InvoiceDetail extends javax.swing.JFrame {
                 deleteActionPerformed(evt);
             }
         });
-        jPanel1.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 540, 120, -1));
+        jPanel1.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 540, 120, -1));
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Bodoni MT", 1, 28)); // NOI18N
@@ -139,6 +139,28 @@ public class InvoiceDetail extends javax.swing.JFrame {
         });
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        save1.setBackground(new java.awt.Color(0, 153, 153));
+        save1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        save1.setForeground(new java.awt.Color(255, 255, 255));
+        save1.setText("SAVE");
+        save1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                save1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(save1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 540, 120, -1));
+
+        update1.setBackground(new java.awt.Color(0, 153, 153));
+        update1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        update1.setForeground(new java.awt.Color(255, 255, 255));
+        update1.setText("UPDATE");
+        update1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                update1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(update1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 540, 120, -1));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 600));
 
         pack();
@@ -149,15 +171,35 @@ public class InvoiceDetail extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_searchActionPerformed
 
-    private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
+    private void showActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_updateActionPerformed
-
-    private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
-        // TODO add your handling code here:
-         JOptionPane.showMessageDialog(this,"Saved Successfully.");
-        
-    }//GEN-LAST:event_saveActionPerformed
+        try{
+         
+            ConnectionClass obj = new ConnectionClass();
+            conn = obj.getConnection();
+            Statement st = conn.createStatement();
+            String sql = "select * from invoice";
+            ResultSet rs = st.executeQuery(sql);
+            
+            while(rs.next())
+            {
+                String invoice_no = rs.getString("invoice");//
+                String item_no = rs.getString("item_no");
+                String item_name = rs.getString("item_name");
+                String quality = rs.getString("quality");
+                String unit_price = rs.getString("unit_price");
+                String subtotal = rs.getString("subtotal");
+                // st.setString(1,invoice_no);
+                String tbdata[] = {invoice_no,item_no,item_name,quality,unit_price,subtotal};
+                DefaultTableModel tblModel = (DefaultTableModel)table.getModel();
+                    
+                    tblModel.addRow(tbdata);
+            }
+             conn.close();
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }//GEN-LAST:event_showActionPerformed
 
     private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
         // TODO add your handling code here:
@@ -170,10 +212,24 @@ public class InvoiceDetail extends javax.swing.JFrame {
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         // TODO add your handling code here:
-         Dashbord obj = new Dashbord();
+      /*   Dashbord obj;
+        try {
+            obj = new Dashbord();
             this.hide();
             obj.setVisible(true);
+       // } catch (SQLException ex) {
+            Logger.getLogger(InvoiceDetail.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
+            
     }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void save1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_save1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_save1ActionPerformed
+
+    private void update1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_update1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -218,10 +274,13 @@ public class InvoiceDetail extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JButton save;
+    private javax.swing.JButton save1;
     private javax.swing.JButton search;
-    private javax.swing.JButton update;
+    private javax.swing.JButton show;
+    private javax.swing.JTable table;
+    private javax.swing.JButton update1;
     // End of variables declaration//GEN-END:variables
+
+ 
 }

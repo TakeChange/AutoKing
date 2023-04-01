@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-
+import java.text.SimpleDateFormat;
 
 public class AddAcceseries extends javax.swing.JFrame {
  
@@ -70,8 +70,8 @@ public class AddAcceseries extends javax.swing.JFrame {
         text5 = new javax.swing.JLabel();
         text6 = new javax.swing.JLabel();
         text7 = new javax.swing.JLabel();
-        acc6 = new com.toedter.calendar.JDateChooser();
         acc7 = new javax.swing.JComboBox<>();
+        acc6 = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -226,11 +226,11 @@ public class AddAcceseries extends javax.swing.JFrame {
 
         text7.setForeground(new java.awt.Color(255, 0, 0));
         jPanel3.add(text7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 550, 240, 20));
-        jPanel3.add(acc6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 450, 240, 40));
 
         acc7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "select" }));
         acc7.setToolTipText("");
         jPanel3.add(acc7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 520, 240, 30));
+        jPanel3.add(acc6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 450, 240, 40));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 530, 640));
 
@@ -357,12 +357,12 @@ public class AddAcceseries extends javax.swing.JFrame {
             text5.setText(" Company name do not empty.");
         }
         else
-        if(!cname.matches(str5))
-        {
-            text5.setText(" Company name is invalid.");
-            isValid = false;
-        }
-        else
+//        if(!cname.matches(str5))
+//        {
+//            text5.setText(" Company name is invalid.");
+//            isValid = false;
+//        }
+//        else
         {
                 text5.setText("");
                 
@@ -469,19 +469,20 @@ public class AddAcceseries extends javax.swing.JFrame {
             
 
         }
-        
-                                        
-        
-        //
-        
-        
+         
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        Dashbord obj = new Dashbord();
-        this.hide();
-        obj.setVisible(true);        // TODO add your handling code here:
+        Dashbord obj;
+        try {
+            obj = new Dashbord();
+             this.hide();
+        obj.setVisible(true); 
+        } catch (SQLException ex) {
+            Logger.getLogger(AddAcceseries.class.getName()).log(Level.SEVERE, null, ex);
+        }
+              // TODO add your handling code here:
     }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
