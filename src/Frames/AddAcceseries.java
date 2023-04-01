@@ -70,8 +70,8 @@ public class AddAcceseries extends javax.swing.JFrame {
         text5 = new javax.swing.JLabel();
         text6 = new javax.swing.JLabel();
         text7 = new javax.swing.JLabel();
-        acc6 = new com.toedter.calendar.JDateChooser();
         acc7 = new javax.swing.JComboBox<>();
+        acc6 = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -226,11 +226,11 @@ public class AddAcceseries extends javax.swing.JFrame {
 
         text7.setForeground(new java.awt.Color(255, 0, 0));
         jPanel3.add(text7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 550, 240, 20));
-        jPanel3.add(acc6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 450, 240, 40));
 
         acc7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "select" }));
         acc7.setToolTipText("");
         jPanel3.add(acc7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 520, 240, 30));
+        jPanel3.add(acc6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 450, 240, 40));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 530, 640));
 
