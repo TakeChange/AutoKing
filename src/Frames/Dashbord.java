@@ -6,8 +6,11 @@ package Frames;
 
 import java.awt.Color;
 import java.sql.SQLException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.sql.*;  
 
 /**
  *
@@ -15,11 +18,61 @@ import java.util.logging.Logger;
  */
 public class Dashbord extends javax.swing.JFrame {
 
-    /**
-     * Creates new form dashbord
-     */
-    public Dashbord() {
+    Connection conn = null;
+    public Dashbord() throws SQLException {
         initComponents();
+        SupplierCount();
+        AcceseriesCount();
+    }
+    
+    void SupplierCount() throws SQLException
+    {
+        int abc=0;
+                ConnectionClass obj = new ConnectionClass();
+                conn = obj.getConnection();
+                try {
+                        String sql = "SELECT COUNT(sname)FROM supplier";
+                        PreparedStatement st = conn.prepareStatement(sql);
+                        ResultSet rs = st.executeQuery(sql);
+
+                        if(rs.next()) 
+                        { 
+                            abc = rs.getInt(1); // or getString(1) if you need it as a String    
+                        }
+                    } 
+                    catch (Exception e) 
+                    {
+                        System.out.println("\n Message: " + e.getMessage());
+                    }
+                
+                System.out.println("Count:"+abc);
+                String cnt = String.valueOf(abc);
+                SupplierCount.setText(cnt);
+    }
+    
+    void AcceseriesCount() throws SQLException
+    {
+        int abc=0;
+                ConnectionClass obj = new ConnectionClass();
+                conn = obj.getConnection();
+                try {
+                        String sql = "SELECT COUNT(acce_name)FROM addaccessories";
+                        PreparedStatement st = conn.prepareStatement(sql);
+                        ResultSet rs = st.executeQuery(sql);
+
+                        if(rs.next()) 
+                        { 
+                            abc = rs.getInt(1); // or getString(1) if you need it as a String    
+                        }
+                    } 
+                    catch (Exception e) 
+                    {
+                        System.out.println("\n Message: " + e.getMessage());
+                    }
+                
+                System.out.println("Count:"+abc);
+                String cnt = String.valueOf(abc);
+                acceCount.setText(cnt);
     }
 
     /**
@@ -40,12 +93,12 @@ public class Dashbord extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        acceCount = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        SupplierCount = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
@@ -146,9 +199,9 @@ public class Dashbord extends javax.swing.JFrame {
         jLabel8.setText("Accesaries Count");
         jPanel5.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, -1, -1));
 
-        jLabel10.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel10.setText("00000");
-        jPanel5.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 80, 30));
+        acceCount.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        acceCount.setText("00000");
+        jPanel5.add(acceCount, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 80, 30));
 
         jPanel6.setBackground(new java.awt.Color(51, 255, 102));
 
@@ -181,9 +234,8 @@ public class Dashbord extends javax.swing.JFrame {
         jLabel12.setText("Supplier Count");
         jPanel7.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
 
-        jLabel13.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel13.setText("00000");
-        jPanel7.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 80, 30));
+        SupplierCount.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jPanel7.add(SupplierCount, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 80, 30));
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 102));
 
@@ -947,14 +999,20 @@ public class Dashbord extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Dashbord().setVisible(true);
+                try {
+                    new Dashbord().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(Dashbord.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Accesaries1;
+    private javax.swing.JLabel SupplierCount;
     private javax.swing.JLabel accdet;
+    private javax.swing.JLabel acceCount;
     private javax.swing.JLabel addacc;
     private javax.swing.JLabel addcust;
     private javax.swing.JLabel addinv;
@@ -963,10 +1021,8 @@ public class Dashbord extends javax.swing.JFrame {
     private javax.swing.JLabel customer1;
     private javax.swing.JLabel invdet;
     private javax.swing.JLabel invoice;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;

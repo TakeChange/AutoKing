@@ -218,7 +218,7 @@ public class AddSupplier extends javax.swing.JFrame {
         }
          //name
          //Anuja Bhalerao
-          String strPattern1 = "[a-zA-Z]+\\.?";
+          String strPattern1 = "[a-z A-Z]+\\.?";
          String Sname=sup2.getText();
           if(Sname.equals(""))
         {
@@ -273,19 +273,19 @@ public class AddSupplier extends javax.swing.JFrame {
             
             
             //Address
-            String strPattern4=("\"^(\\\\d{1,}) [a-zA-Z0-9\\\\s]+(\\\\,)? [a-zA-Z]+(\\\\,)? [A-Z]{2} [0-9]{5,6}$\"");
+            String strPattern4="[a-z . A-Z-0-9._]+\\.?";
             String Address=sup5.getText();
                if(Address.equals(""))
         {
             addError.setText("Address do not empty.");
             isValid = false;
         }
-//               else
-//               if(!Address.matches(strPattern4))
-//              {
-//              addError.setText("address is invalid");
-//              isValid = false;
-//              }
+               else
+               if(!Address.matches(strPattern4))
+              {
+              addError.setText("address is invalid");
+              isValid = false;
+              }
                else
                {
                    addError.setText("");

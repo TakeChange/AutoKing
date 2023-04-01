@@ -4,6 +4,9 @@
  */
 package Frames;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,9 +15,6 @@ import javax.swing.JOptionPane;
  */
 public class Customerdetails extends javax.swing.JFrame {
 
-    /**
-     * Creates new form customerdetails
-     */
     public Customerdetails() {
         initComponents();
     }
@@ -173,9 +173,15 @@ public class Customerdetails extends javax.swing.JFrame {
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         // TODO add your handling code here:
-        Dashbord obj = new Dashbord();
-        this.hide();
+        Dashbord obj;
+        try {
+            obj = new Dashbord();
+               this.hide();
         obj.setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(Customerdetails.class.getName()).log(Level.SEVERE, null, ex);
+        }
+     
     }//GEN-LAST:event_jLabel4MouseClicked
 
     /**
