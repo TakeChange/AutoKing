@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-
+import java.text.SimpleDateFormat;
 
 public class AddAcceseries extends javax.swing.JFrame {
  
@@ -357,12 +357,12 @@ public class AddAcceseries extends javax.swing.JFrame {
             text5.setText(" Company name do not empty.");
         }
         else
-        if(!cname.matches(str5))
-        {
-            text5.setText(" Company name is invalid.");
-            isValid = false;
-        }
-        else
+//        if(!cname.matches(str5))
+//        {
+//            text5.setText(" Company name is invalid.");
+//            isValid = false;
+//        }
+//        else
         {
                 text5.setText("");
                 
@@ -469,19 +469,20 @@ public class AddAcceseries extends javax.swing.JFrame {
             
 
         }
-        
-                                        
-        
-        //
-        
-        
+         
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        Dashbord obj = new Dashbord();
-        this.hide();
-        obj.setVisible(true);        // TODO add your handling code here:
+        Dashbord obj;
+        try {
+            obj = new Dashbord();
+             this.hide();
+        obj.setVisible(true); 
+        } catch (SQLException ex) {
+            Logger.getLogger(AddAcceseries.class.getName()).log(Level.SEVERE, null, ex);
+        }
+              // TODO add your handling code here:
     }//GEN-LAST:event_jLabel2MouseClicked
 
     /**

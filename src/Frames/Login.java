@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Pritish
+ * @author Anuja
  */
 public class Login extends javax.swing.JFrame {
 
@@ -199,7 +199,7 @@ public class Login extends javax.swing.JFrame {
             isValid = false;
         }
         else
-        if(!username.matches( strPattern ))
+        if(!username.matches( strPattern))
         {
             userError.setText("Enter valid username");
             isValid = false;
@@ -232,6 +232,9 @@ public class Login extends javax.swing.JFrame {
             // isValid = false;
         }
         
+        
+        if(isValid)
+        {
         try 
             {
                 
@@ -271,6 +274,7 @@ public class Login extends javax.swing.JFrame {
                JOptionPane.showMessageDialog(this,"This user allready exits.");
                ex.printStackTrace();
             }
+        }
           
 
     
