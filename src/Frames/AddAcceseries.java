@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-
+import java.text.SimpleDateFormat;
 
 public class AddAcceseries extends javax.swing.JFrame {
  
@@ -469,12 +469,7 @@ public class AddAcceseries extends javax.swing.JFrame {
             
 
         }
-        
-                                        
-        
-        //
-        
-        
+         
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
