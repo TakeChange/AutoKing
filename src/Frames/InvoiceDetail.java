@@ -95,7 +95,7 @@ public class InvoiceDetail extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Invoiceno", "Itemno", "itemname", "quantity", "Price", "Amount"
+                "Invoiceno", "Itemno", "Itemname", "quantity", "Price", "Amount"
             }
         ));
         jScrollPane1.setViewportView(table);

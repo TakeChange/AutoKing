@@ -432,7 +432,7 @@ public class AddAcceseries extends javax.swing.JFrame {
                 
                 System.out.println("Connected to XAMPP MySQL database");
                 
-                String q = "insert into addaccessories(product_id,acce_name,acce_price,acce_quantity,acce_comp_name,acce_issue_date,supplier_name) values(?,?,?,?,?,?,?)";
+                String q = "insert into addaccessories(product_id,acc_name,acc_price,acc_quantity,acc_comp_name,acc_issue_date,supplier_name) values(?,?,?,?,?,?,?)";
                 PreparedStatement st = conn.prepareStatement(q);
                 st.setString(1,id);
                 st.setString(2,name);

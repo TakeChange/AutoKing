@@ -4,7 +4,7 @@
  */
 package Frames;
 
-import com.mysql.cj.jdbc.result.ResultSetMetaData;
+import java.sql.ResultSet;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import javax.swing.JOptionPane;
@@ -21,6 +21,7 @@ import javax.swing.table.DefaultTableModel;
 public class AccessoriesDetails extends javax.swing.JFrame {
 
     private Object txtProductid;
+    private Object JoptionPane;
 
     /**
      * Creates new form AccessoriesDetails
@@ -34,17 +35,18 @@ public class AccessoriesDetails extends javax.swing.JFrame {
     ResultSet rs=null;
     ConnectionClass obj;
     DefaultTableModel d;
+    String s;
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        save1 = new javax.swing.JButton();
+        search = new javax.swing.JButton();
         update = new javax.swing.JButton();
         show = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        save4 = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         table = new javax.swing.JTable();
@@ -69,17 +71,17 @@ public class AccessoriesDetails extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 165, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        save1.setBackground(new java.awt.Color(0, 153, 153));
-        save1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        save1.setForeground(new java.awt.Color(255, 255, 255));
-        save1.setText("Search");
-        save1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        save1.addActionListener(new java.awt.event.ActionListener() {
+        search.setBackground(new java.awt.Color(0, 153, 153));
+        search.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        search.setForeground(new java.awt.Color(255, 255, 255));
+        search.setText("Search");
+        search.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                save1ActionPerformed(evt);
+                searchActionPerformed(evt);
             }
         });
-        jPanel1.add(save1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 60, 100, -1));
+        jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 60, 100, -1));
 
         update.setBackground(new java.awt.Color(0, 153, 153));
         update.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -116,17 +118,17 @@ public class AccessoriesDetails extends javax.swing.JFrame {
         });
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 60, 300, 30));
 
-        save4.setBackground(new java.awt.Color(0, 153, 153));
-        save4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        save4.setForeground(new java.awt.Color(255, 255, 255));
-        save4.setText("DELETE");
-        save4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        save4.addActionListener(new java.awt.event.ActionListener() {
+        btnDelete.setBackground(new java.awt.Color(0, 153, 153));
+        btnDelete.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
+        btnDelete.setText("DELETE");
+        btnDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                save4ActionPerformed(evt);
+                btnDeleteActionPerformed(evt);
             }
         });
-        jPanel1.add(save4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 540, 120, -1));
+        jPanel1.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 540, 120, -1));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Bodoni MT", 1, 28)); // NOI18N
@@ -256,69 +258,94 @@ public class AccessoriesDetails extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void save1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_save1ActionPerformed
+    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
         //
+        /*String s = JoptionPane.showInputDialog(this,"Enter Name for Search");
+        {
+        
+        }*/
 
-    }//GEN-LAST:event_save1ActionPerformed
+    }//GEN-LAST:event_searchActionPerformed
 
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
-    /* try 
+    try 
             {
-                
-                //System.out.println("Connected to XAMPP MySQL database");
-                
-                ConnectionClass obj = new ConnectionClass();
+                 obj = new ConnectionClass();
                 conn = obj.getConnection();
-                
-                System.out.println("Connected to XAMPP MySQL database");
-                String
-                
-                String q = "";
-                PreparedStatement st = conn.prepareStatement(q);
-                st.setString(1,username1);
-                st.setString(2,Cdate);
-                st.setString(3,adhar1);
-                st.setString(4,mobile1);
-                st.setString(5,upassword);
-                st.setString(6,confpassword);
-                
-                int op = st.executeUpdate();
-                
                
+                String product_id=t1.getText();
+                String acc_name=t2.getText();
+                String acc_price=t3.getText();
+                String acc_quantity=t4.getText();
+                String acc_comp_name=t5.getText();
+                String acc_issue_date=t6.getText();
+                String supplier_name=t7.getText();
                 
-                if(op>0)
-                {
-                    JOptionPane.showMessageDialog(this," Registration Successfully.");
-                    Login obj2 = new Login();
-                    this.hide();
-                    obj2.setVisible(true);
-                }
-                else
-                {
-                    JOptionPane.showMessageDialog(this," Registration Fail.");
-                }
-                conn.close();
+                String sql = ("UPDATE addaccessories set acc_name=?,acc_price=?,acc_quantity=?,acc_comp_name=?,acc_issue_date=?,supplier_name=? where product_id = ?");
+                PreparedStatement ps = conn.prepareStatement(sql);
+                //pstmt.setInt(1,Integer.parseInt(t1.getText()));
+                ps.setString(1,acc_name);
+                ps.setString(2,acc_price);
+                ps.setString(3,acc_quantity);
+                ps.setString(4,acc_comp_name);
+                ps.setString(5,acc_issue_date);
+                ps.setString(6,supplier_name);
+                ps.setString(7,product_id);
+                ps.executeUpdate();
+                JOptionPane.showMessageDialog(null,"Record Updated Successfully");
+                conn.close();      
             } 
             catch (Exception ex) 
             {
                System.out.println(ex);
                JOptionPane.showMessageDialog(this,"This user allready exits.");
                ex.printStackTrace();
-            }*/
-          
-            
-     
-     
+            }
     }//GEN-LAST:event_updateActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void save4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_save4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_save4ActionPerformed
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
 
+
+
+        // TODO add your handling code here:
+           try 
+            {
+                
+                obj = new ConnectionClass();
+                conn = obj.getConnection();
+                
+                 
+                String product_id=t1.getText();
+                String acc_name=t2.getText();
+                String acc_price=t3.getText();
+                String acc_quality=t4.getText();
+                String acc_company_name=t5.getText();
+                String acc_issue_date=t6.getText();
+                String supplier_name=t7.getText();
+                
+                String sql = ("Delete from addaccessories where product_id = ?");
+                PreparedStatement ps = conn.prepareStatement(sql);
+                //pstmt.setInt(1,Integer.parseInt(t1.getText()));
+                ps.setString(1,product_id);
+                ps.executeUpdate();
+                JOptionPane.showMessageDialog(null,"Record Delated Successfully");
+                conn.close();
+
+            }
+            catch (Exception ex) 
+            {
+                
+               System.out.println(ex);
+               JOptionPane.showMessageDialog(null,ex);
+               ex.printStackTrace();
+            
+        
+    }//GEN-LAST:event_btnDeleteActionPerformed
+    }
     private void showActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showActionPerformed
 
                 
@@ -359,8 +386,6 @@ public class AccessoriesDetails extends javax.swing.JFrame {
                     d.addRow(v);     
                     
                 }
-            
-               
             }
             catch (Exception ex) 
             {
@@ -455,6 +480,7 @@ public class AccessoriesDetails extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDelete;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -467,8 +493,7 @@ public class AccessoriesDetails extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JButton save1;
-    private javax.swing.JButton save4;
+    private javax.swing.JButton search;
     private javax.swing.JButton show;
     private javax.swing.JTextField t1;
     private javax.swing.JTextField t2;
@@ -480,9 +505,4 @@ public class AccessoriesDetails extends javax.swing.JFrame {
     private javax.swing.JTable table;
     private javax.swing.JButton update;
     // End of variables declaration//GEN-END:variables
-
-    
-
-    
-
-}
+  }
