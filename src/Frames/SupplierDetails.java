@@ -48,7 +48,7 @@ public class SupplierDetails extends javax.swing.JFrame {
         delete = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        update1 = new javax.swing.JButton();
+        update = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -155,17 +155,17 @@ public class SupplierDetails extends javax.swing.JFrame {
         });
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        update1.setBackground(new java.awt.Color(0, 153, 153));
-        update1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        update1.setForeground(new java.awt.Color(255, 255, 255));
-        update1.setText("UPDATE");
-        update1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        update1.addActionListener(new java.awt.event.ActionListener() {
+        update.setBackground(new java.awt.Color(0, 153, 153));
+        update.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        update.setForeground(new java.awt.Color(255, 255, 255));
+        update.setText("UPDATE");
+        update.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        update.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                update1ActionPerformed(evt);
+                updateActionPerformed(evt);
             }
         });
-        jPanel1.add(update1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 130, -1));
+        jPanel1.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 130, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Address :");
@@ -284,9 +284,9 @@ public class SupplierDetails extends javax.swing.JFrame {
       
     }//GEN-LAST:event_jLabel4MouseClicked
 
-    private void update1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update1ActionPerformed
+    private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_update1ActionPerformed
+    }//GEN-LAST:event_updateActionPerformed
 
     private void t5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t5ActionPerformed
         // TODO add your handling code here:
@@ -365,6 +365,6 @@ public class SupplierDetails extends javax.swing.JFrame {
     private javax.swing.JTextField t4;
     private javax.swing.JTextField t5;
     private javax.swing.JTable table;
-    private javax.swing.JButton update1;
+    private javax.swing.JButton update;
     // End of variables declaration//GEN-END:variables
 }

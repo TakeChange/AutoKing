@@ -15,7 +15,7 @@ import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *
+ 
  * @author admin
  */
 public class AccessoriesDetails extends javax.swing.JFrame {
@@ -308,17 +308,13 @@ public class AccessoriesDetails extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-
-
-
-        // TODO add your handling code here:
+    // TODO add your handling code here:
            try 
             {
                 
                 obj = new ConnectionClass();
                 conn = obj.getConnection();
                 
-                 
                 String product_id=t1.getText();
                 String acc_name=t2.getText();
                 String acc_price=t3.getText();
@@ -351,7 +347,6 @@ public class AccessoriesDetails extends javax.swing.JFrame {
                 
             try 
             {
-                
                 //System.out.println("Connected to XAMPP MySQL database");
                 
                 obj = new ConnectionClass();

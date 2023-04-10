@@ -338,7 +338,7 @@ public class AddSupplier extends javax.swing.JFrame {
                 ConnectionClass obj = new ConnectionClass();
                 conn = obj.getConnection();
                 
-                String q = "insert into supplier(id,sdate,sname,smobile,emailid,address) values(?,?,?,?,?,?)";
+                String q = "insert into supplier(sid,sdate,sname,smobile,emailid,address) values(?,?,?,?,?,?)";
                 PreparedStatement st = conn.prepareStatement(q);
                 st.setString(1,ID);
                 st.setString(2,Cdate);

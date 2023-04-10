@@ -56,7 +56,7 @@ public class Dashbord extends javax.swing.JFrame {
                 ConnectionClass obj = new ConnectionClass();
                 conn = obj.getConnection();
                 try {
-                        String sql = "SELECT COUNT(acce_name)FROM addaccessories";
+                        String sql = "SELECT COUNT(acc_name)FROM addaccessories";
                         PreparedStatement st = conn.prepareStatement(sql);
                         ResultSet rs = st.executeQuery(sql);
 
