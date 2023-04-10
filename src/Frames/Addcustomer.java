@@ -378,7 +378,7 @@ public class Addcustomer extends javax.swing.JFrame {
                 if(op>0)
                 {
                     JOptionPane.showMessageDialog(this," Supplier Added Successfully.");
-                    Dashbord obj2 = new Dashbord();
+                    Customerdetails obj2 = new Customerdetails();
                     this.hide();
                     obj2.setVisible(true);
                 }
