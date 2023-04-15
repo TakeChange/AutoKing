@@ -135,7 +135,7 @@ public signup() {
 
         jLabel11.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         jLabel11.setText("Confirm password :");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 520, -1, 30));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 510, -1, 30));
 
         password.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
         password.setCaretColor(new java.awt.Color(255, 102, 0));

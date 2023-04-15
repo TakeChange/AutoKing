@@ -9,10 +9,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.sql.ResultSet;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSetMetaData;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 //import java.sql.DriverManager;
 import java.sql.Statement;
+import java.util.Vector;
 
 /**
  *
@@ -20,7 +23,9 @@ import java.sql.Statement;
  */
 public class SupplierDetails extends javax.swing.JFrame {
 
-    private Connection conn;
+    //private Connection conn;
+     private Object txtsid;
+    private Object JoptionPane;
 
     /**
      * Creates new form Supplierdetails
@@ -28,6 +33,12 @@ public class SupplierDetails extends javax.swing.JFrame {
     public SupplierDetails() {
         initComponents();
     }
+    Connection conn=null;
+    PreparedStatement st=null;
+    ResultSet rs=null;
+    ConnectionClass obj;
+    DefaultTableModel d;
+    String s;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -54,11 +65,13 @@ public class SupplierDetails extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        t5 = new javax.swing.JTextField();
-        t1 = new javax.swing.JTextField();
+        t6 = new javax.swing.JTextField();
         t2 = new javax.swing.JTextField();
         t3 = new javax.swing.JTextField();
         t4 = new javax.swing.JTextField();
+        t5 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        t1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -68,24 +81,29 @@ public class SupplierDetails extends javax.swing.JFrame {
 
         table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Supplierid", "Suppliername", "Mobile", "Email", "Address"
+                "Supplierid", "SupplierDate", "Suppliername", "Mobile", "Email", "Address"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Long.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+        });
+        table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableMouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(table);
@@ -138,7 +156,7 @@ public class SupplierDetails extends javax.swing.JFrame {
                 deleteActionPerformed(evt);
             }
         });
-        jPanel1.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 540, 140, -1));
+        jPanel1.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 540, 140, -1));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Bodoni MT", 1, 28)); // NOI18N
@@ -165,62 +183,73 @@ public class SupplierDetails extends javax.swing.JFrame {
                 updateActionPerformed(evt);
             }
         });
-        jPanel1.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 130, -1));
+        jPanel1.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 540, 130, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Address :");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, 80, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setText("Id :");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 50, 20));
+        jLabel5.setText("Date :");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 50, 20));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setText("Name :");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 60, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 60, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel7.setText("Mobile :");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 70, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 70, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel8.setText("Email :");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 60, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 60, -1));
 
-        t5.addActionListener(new java.awt.event.ActionListener() {
+        t6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                t5ActionPerformed(evt);
+                t6ActionPerformed(evt);
             }
         });
-        jPanel1.add(t5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 460, 170, 30));
-
-        t1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                t1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(t1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 170, 30));
+        jPanel1.add(t6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 470, 170, 30));
 
         t2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 t2ActionPerformed(evt);
             }
         });
-        jPanel1.add(t2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 170, 30));
+        jPanel1.add(t2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 170, 30));
 
         t3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 t3ActionPerformed(evt);
             }
         });
-        jPanel1.add(t3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 170, 30));
+        jPanel1.add(t3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, 170, 30));
 
         t4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 t4ActionPerformed(evt);
             }
         });
-        jPanel1.add(t4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 170, 30));
+        jPanel1.add(t4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 170, 30));
+
+        t5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                t5ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(t5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, 170, 30));
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel9.setText("Id :");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 50, 20));
+
+        t1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                t1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(t1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 170, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 600));
 
@@ -236,31 +265,45 @@ public class SupplierDetails extends javax.swing.JFrame {
 
     private void showActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showActionPerformed
         // TODO add your handling code here:
-      try
-      {
-           ConnectionClass obj = new ConnectionClass();
-             conn = obj.getConnection();
-                Statement st=conn.createStatement();
-                String sql= "select *from supplier";
-                ResultSet rs = st.executeQuery(sql);
-            
+        try 
+            {
+                //System.out.println("Connected to XAMPP MySQL database");
+                
+                obj = new ConnectionClass();
+                conn = obj.getConnection();
+                
+                System.out.println("Connected to XAMPP MySQL database");
+                
+                String q = "select * from addsupplier";
+                st = conn.prepareStatement(q);
+                rs=st.executeQuery();
+                
+
+                ResultSetMetaData rsmd=(ResultSetMetaData) rs.getMetaData();
+                int n=rsmd.getColumnCount();
+                
+                d=(DefaultTableModel)table.getModel();
+                d.setRowCount(0);
                 while(rs.next())
                 {
-                    String supplier_id = rs.getString("Supplier id");
-                    String supplier_name = rs.getString("Supplier name");
-                    String mobile = rs.getString("Mobile");
-                    String email = rs.getString("Email");
-                    String address = rs.getString("Address");
-                    String tbdata[] = {supplier_id,supplier_name,mobile,email,address};
-                    DefaultTableModel tblModel = (DefaultTableModel)table.getModel();
-                    
-                    tblModel.addRow(tbdata);
+                    Vector v=new Vector();
+                    for(int i=1;i<=n;i++)
+                    {
+                        v.add(rs.getString("sid"));
+                        v.add(rs.getString("sdate"));
+                        v.add(rs.getString("sname"));
+                        v.add(rs.getString("smobile"));
+                        v.add(rs.getString("emailid"));
+                        v.add(rs.getString("address"));
+                    }
+                    d.addRow(v);       
                 }
-                conn.close();
-      }catch(Exception e)
-      {
-          System.out.println(e.getMessage());
-      }
+            }
+            catch (Exception ex) 
+            {
+               System.out.println(ex);
+                ex.printStackTrace();
+            }   
     }//GEN-LAST:event_showActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -269,6 +312,36 @@ public class SupplierDetails extends javax.swing.JFrame {
 
     private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
         // TODO add your handling code here:
+        try 
+            {
+                
+                obj = new ConnectionClass();
+                conn = obj.getConnection();
+                
+                String sid=t1.getText();
+                String sdate=t2.getText();
+                String sname=t3.getText();
+                String smobile=t4.getText();
+                String emailid=t5.getText();
+                String address=t6.getText();
+                
+                
+                String sql = ("Delete from addsupplier where sid = ?");
+                PreparedStatement ps = conn.prepareStatement(sql);
+                //pstmt.setInt(1,Integer.parseInt(t1.getText()));
+                ps.setString(1,sid);
+                ps.executeUpdate();
+                JOptionPane.showMessageDialog(null,"Record Delated Successfully");
+                conn.close();
+
+            }
+            catch (Exception ex) 
+            {
+                
+               System.out.println(ex);
+               JOptionPane.showMessageDialog(null,ex);
+               ex.printStackTrace();
+            }
     }//GEN-LAST:event_deleteActionPerformed
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
@@ -286,15 +359,44 @@ public class SupplierDetails extends javax.swing.JFrame {
 
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
         // TODO add your handling code here:
+        try 
+            {
+                obj = new ConnectionClass();
+                conn = obj.getConnection();
+               
+                String sid=t1.getText();
+                String sdate=t2.getText();
+                String sname=t3.getText();
+                String smobile=t4.getText();
+                String emailid=t5.getText();
+                String address=t6.getText();
+               
+                
+                String sql = ("UPDATE addsupplier set sdate=?,sname=?,smobile=?,emailid=?,address=?,where sid = ?");
+                PreparedStatement ps = conn.prepareStatement(sql);
+                //pstmt.setInt(1,Integer.parseInt(t1.getText()));
+                ps.setString(1,sdate);
+                ps.setString(2,sname);
+                ps.setString(3,smobile);
+                ps.setString(4,emailid);
+                ps.setString(5,address);
+                ps.setString(6,sid);
+              
+                ps.executeUpdate();
+                JOptionPane.showMessageDialog(null,"Record Updated Successfully");
+                conn.close();      
+            } 
+            catch (Exception ex) 
+            {
+               System.out.println(ex);
+               JOptionPane.showMessageDialog(this,"This user allready exits.");
+               ex.printStackTrace();
+            }
     }//GEN-LAST:event_updateActionPerformed
 
-    private void t5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t5ActionPerformed
+    private void t6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t6ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_t5ActionPerformed
-
-    private void t1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_t1ActionPerformed
+    }//GEN-LAST:event_t6ActionPerformed
 
     private void t2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t2ActionPerformed
         // TODO add your handling code here:
@@ -307,6 +409,35 @@ public class SupplierDetails extends javax.swing.JFrame {
     private void t4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_t4ActionPerformed
+
+    private void t5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_t5ActionPerformed
+
+    private void t1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_t1ActionPerformed
+
+    private void tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableMouseClicked
+        // TODO add your handling code here:
+        d=(DefaultTableModel)table.getModel();
+        String a1=d.getValueAt(table.getSelectedRow(),0).toString();
+        String b1=d.getValueAt(table.getSelectedRow(),1).toString();
+        String c1=d.getValueAt(table.getSelectedRow(),2).toString();
+        String d1=d.getValueAt(table.getSelectedRow(),3).toString();
+        String e1=d.getValueAt(table.getSelectedRow(),4).toString();
+        String f1=d.getValueAt(table.getSelectedRow(),5).toString();
+        //String g1=d.getValueAt(table.getSelectedRow(),6).toString();
+        
+        t1.setText(a1);
+        t2.setText(b1);
+        t3.setText(c1);
+        t4.setText(d1);
+        t5.setText(e1);
+        t6.setText(f1);
+       
+                            
+    }//GEN-LAST:event_tableMouseClicked
 
     /**
      * @param args the command line arguments
@@ -354,6 +485,7 @@ public class SupplierDetails extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
@@ -364,6 +496,7 @@ public class SupplierDetails extends javax.swing.JFrame {
     private javax.swing.JTextField t3;
     private javax.swing.JTextField t4;
     private javax.swing.JTextField t5;
+    private javax.swing.JTextField t6;
     private javax.swing.JTable table;
     private javax.swing.JButton update;
     // End of variables declaration//GEN-END:variables

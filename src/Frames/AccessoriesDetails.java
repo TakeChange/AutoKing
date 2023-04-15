@@ -198,7 +198,7 @@ public class AccessoriesDetails extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setText("id :");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel9.setText("Name :");
@@ -250,7 +250,7 @@ public class AccessoriesDetails extends javax.swing.JFrame {
                 t1ActionPerformed(evt);
             }
         });
-        jPanel1.add(t1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 170, 40));
+        jPanel1.add(t1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 170, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 600));
 
@@ -259,12 +259,38 @@ public class AccessoriesDetails extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
-        //
-        /*String s = JoptionPane.showInputDialog(this,"Enter Name for Search");
-        {
         
-        }*/
-
+       //JOptionPane.showMessageDialog(null,"Enter Name for search"); 
+        try 
+            {
+                 obj = new ConnectionClass();
+                conn = obj.getConnection();
+                
+                String sql = ("select *from addaccessories where acc_name=?");
+                PreparedStatement ps = conn.prepareStatement(sql);
+                ps.setString(1,t2.getText());
+                // ps.setString(1,acc_name);
+               
+                ps.executeUpdate();
+                if(rs.next())
+                {
+                  t1.setText(rs.getString(1)); 
+                  t2.setText(rs.getString(2));
+                  t3.setText(rs.getString(3));
+                  t4.setText(rs.getString(4));
+                  t5.setText(rs.getString(5));
+                  t6.setText(rs.getString(6));
+                  t7.setText(rs.getString(7));
+                  
+                }
+                conn.close();      
+            } 
+            catch (Exception ex) 
+            {
+               System.out.println(ex);
+               JOptionPane.showMessageDialog(this,"This user allready exits.");
+               ex.printStackTrace();
+            }
     }//GEN-LAST:event_searchActionPerformed
 
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
@@ -343,9 +369,7 @@ public class AccessoriesDetails extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDeleteActionPerformed
     }
     private void showActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showActionPerformed
-
-                
-            try 
+           try 
             {
                 //System.out.println("Connected to XAMPP MySQL database");
                 
@@ -378,8 +402,7 @@ public class AccessoriesDetails extends javax.swing.JFrame {
                         v.add(rs.getString("supplier_name"));
                     }
                   
-                    d.addRow(v);     
-                    
+                    d.addRow(v);       
                 }
             }
             catch (Exception ex) 
@@ -387,9 +410,7 @@ public class AccessoriesDetails extends javax.swing.JFrame {
                System.out.println(ex);
              //  JOptionPane.showMessageDialog(this,"This user allready exits.");
                ex.printStackTrace();
-            }
-          
-            
+            }   
     }//GEN-LAST:event_showActionPerformed
 
     private void t2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t2ActionPerformed

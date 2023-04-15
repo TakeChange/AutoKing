@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 import java.sql.*;
+import java.util.Vector;
 
 
 
@@ -22,10 +23,18 @@ import java.sql.*;
  */
 public class Customerdetails extends javax.swing.JFrame {
 
+     private Object txtProductid;
+    private Object JoptionPane;
+
     public Customerdetails() {
         initComponents();
     }
-        Connection conn;
+    Connection conn;
+    PreparedStatement st=null;
+    ResultSet rs=null;
+    ConnectionClass obj;
+    DefaultTableModel d;
+    String s;
    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -57,6 +66,9 @@ public class Customerdetails extends javax.swing.JFrame {
         t1 = new javax.swing.JTextPane();
         jScrollPane6 = new javax.swing.JScrollPane();
         t4 = new javax.swing.JTextPane();
+        jLabel9 = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        t6 = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -79,7 +91,7 @@ public class Customerdetails extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Long.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+                java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -168,43 +180,51 @@ public class Customerdetails extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Name:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
 
         jScrollPane2.setViewportView(t2);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, 170, 40));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 170, 40));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setText("Mobile:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setText("Email :");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel7.setText("Address :");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel8.setText("Id :");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 140, 40, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 40, -1));
 
         jScrollPane3.setViewportView(t3);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, 170, 40));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 170, 40));
 
         jScrollPane4.setViewportView(t5);
 
-        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 470, 170, 40));
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 460, 170, 40));
 
         jScrollPane5.setViewportView(t1);
 
-        jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 170, 40));
+        jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 170, 40));
 
         jScrollPane6.setViewportView(t4);
 
-        jPanel1.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 390, 170, 40));
+        jPanel1.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, 170, 40));
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel9.setText("Address :");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, -1, -1));
+
+        jScrollPane7.setViewportView(t6);
+
+        jPanel1.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, 170, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 600));
 
@@ -218,7 +238,37 @@ public class Customerdetails extends javax.swing.JFrame {
     }//GEN-LAST:event_searchActionPerformed
 
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
-       
+       try 
+            {
+                 obj = new ConnectionClass();
+                conn = obj.getConnection();
+               
+                String cust_id=t1.getText();
+                String cust_name=t2.getText();
+                String cust_mobile=t3.getText();
+                String cust_email=t4.getText();
+                String cust_address=t5.getText();
+                String date=t6.getText();
+               
+                String sql = ("UPDATE addcustomer set cust_name=?,cust_mobile=?,cust_email=?,cust_address=?,date=? where cust_id = ?");
+                PreparedStatement ps = conn.prepareStatement(sql);
+                //pstmt.setInt(1,Integer.parseInt(t1.getText()));
+                ps.setString(1,cust_name);
+                ps.setString(2,cust_mobile);
+                ps.setString(3,cust_email);
+                ps.setString(4,cust_address);
+                ps.setString(5,date);
+                ps.setString(6,cust_id);
+                ps.executeUpdate();
+                JOptionPane.showMessageDialog(null,"Record Updated Successfully");
+                conn.close();      
+            } 
+            catch (Exception ex) 
+            {
+               System.out.println(ex);
+               JOptionPane.showMessageDialog(this,"This user allready exits.");
+               ex.printStackTrace();
+            }
     }//GEN-LAST:event_updateActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -243,39 +293,66 @@ public class Customerdetails extends javax.swing.JFrame {
     }//GEN-LAST:event_delete1ActionPerformed
 
     private void tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableMouseClicked
-        //DefaultTableModel tblModel = (DefaultTableModel)table.getModel();
-//        if(table.getSelectedRowCount()==1)
-                 
-            
+        d=(DefaultTableModel)table.getModel();
+        String a1=d.getValueAt(table.getSelectedRow(),0).toString();
+        String b1=d.getValueAt(table.getSelectedRow(),1).toString();
+        String c1=d.getValueAt(table.getSelectedRow(),2).toString();
+        String d1=d.getValueAt(table.getSelectedRow(),3).toString();
+        String e1=d.getValueAt(table.getSelectedRow(),4).toString();
+        String f1=d.getValueAt(table.getSelectedRow(),5).toString();
+        //String g1=d.getValueAt(table.getSelectedRow(),6).toString();
+        
+        t1.setText(a1);
+        t2.setText(b1);
+        t3.setText(c1);
+        t4.setText(d1);
+        t5.setText(e1);
+        t6.setText(f1);     
     }//GEN-LAST:event_tableMouseClicked
 
     private void showActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showActionPerformed
         // TODO add your handling code here:
-
-        try{
-            ConnectionClass obj = new ConnectionClass();
-            conn = obj.getConnection();
-            Statement st=(Statement)conn.createStatement();
-            String sql= "select * from customer";
-            ResultSet rs = st.executeQuery(sql);
-
-            while(rs.next())
+        try 
             {
-                String customer_id = rs.getString("customer_id");
-                String customer_name = rs.getString("customer_name");
-                String customer_mobile = rs.getString("customer_mobile");
-                String customer_email = rs.getString("customer_email");
-                String customer_address = rs.getString("customer_address");
-                //st.setString(1,customer_id);
-                String tbdata[]={customer_id,customer_name,customer_mobile,customer_email,customer_address};
-                DefaultTableModel tblModel = (DefaultTableModel)table.getModel();
+                //System.out.println("Connected to XAMPP MySQL database");
+                
+                obj = new ConnectionClass();
+                conn = obj.getConnection();
+                
+                System.out.println("Connected to XAMPP MySQL database");
+                
+                String q = "select * from addcustomer";
+                st = conn.prepareStatement(q);
+                rs=st.executeQuery();
+                
 
-                tblModel.addRow(tbdata);
+                ResultSetMetaData rsmd=(ResultSetMetaData) rs.getMetaData();
+                int n=rsmd.getColumnCount();
+                
+                d=(DefaultTableModel)table.getModel();
+                d.setRowCount(0);
+                while(rs.next())
+                {
+                    Vector v=new Vector();
+                    for(int i=1;i<=n;i++)
+                    {
+                        v.add(rs.getString("cust_id"));
+                        v.add(rs.getString("cust_name"));
+                        v.add(rs.getString("cust_mobile"));
+                        v.add(rs.getString("cust_email"));
+                        v.add(rs.getString("cust_address"));
+                        v.add(rs.getString("date"));
+                     }
+                    d.addRow(v);       
+                }
             }
-            conn.close();
-        }catch(Exception e){
-            System.out.println(e.getMessage());
-        }
+            catch (Exception ex) 
+            {
+               System.out.println(ex);
+             //  JOptionPane.showMessageDialog(this,"This user allready exits.");
+               ex.printStackTrace();
+            }   
+        
 
     }//GEN-LAST:event_showActionPerformed
 
@@ -306,6 +383,8 @@ public class Customerdetails extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -325,6 +404,7 @@ public class Customerdetails extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -332,6 +412,7 @@ public class Customerdetails extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JButton search;
     private javax.swing.JButton show;
@@ -340,6 +421,7 @@ public class Customerdetails extends javax.swing.JFrame {
     private javax.swing.JTextPane t3;
     private javax.swing.JTextPane t4;
     private javax.swing.JTextPane t5;
+    private javax.swing.JTextPane t6;
     private javax.swing.JTable table;
     private javax.swing.JButton update;
     // End of variables declaration//GEN-END:variables
