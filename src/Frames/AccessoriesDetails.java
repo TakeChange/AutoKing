@@ -261,7 +261,7 @@ public class AccessoriesDetails extends javax.swing.JFrame {
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
         
        //JOptionPane.showMessageDialog(null,"Enter Name for search"); 
-        try 
+        /*try 
             {
                  obj = new ConnectionClass();
                 conn = obj.getConnection();
@@ -290,7 +290,7 @@ public class AccessoriesDetails extends javax.swing.JFrame {
                System.out.println(ex);
                JOptionPane.showMessageDialog(this,"This user allready exits.");
                ex.printStackTrace();
-            }
+            }*/
     }//GEN-LAST:event_searchActionPerformed
 
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
